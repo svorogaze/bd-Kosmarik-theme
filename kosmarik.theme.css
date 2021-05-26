@@ -1,0 +1,164 @@
+/**
+ * @name svorogaze
+ * @author Kosmarik
+ * @version 0.1
+ * @description idk
+ */
+
+:root
+{
+   --background: #d88df7;
+   --main: #dd8cff;
+   --border: #CE5B78;
+   --user-gradient-1: #80f0ff;
+   --user-gradient-2: #d780ff;
+   --channelNames-gradient-1: #59ffd3;
+   --channelNames-gradient-2: #c259ff;
+}
+
+@keyframes rainbow_shadow
+{
+    from
+    {
+        box-shadow: 0px 4px 0px #ff8a8a;
+    }
+    14%
+    {
+        box-shadow: 0px 4px 0px #ffcc8a;
+    }
+    28%
+    {
+        box-shadow: 0px 4px 0px #fff78a;
+    }
+    42%
+    {
+        box-shadow: 0px 4px 0px #96ff8a;
+    }
+    56%
+    {
+        box-shadow: 0px 4px 0px #8affec;
+    }
+    70%
+    {
+        box-shadow: 0px 4px 0px #8aabff;
+    }
+    84%
+    {
+        box-shadow: 0px 4px 0px #d48aff;
+    }
+    to
+    {
+        box-shadow: 0px 4px 0px #ff8a8a;
+    }
+
+}
+
+body
+{
+  font-family: system-ui !important;
+}
+
+.contents-2mQqc9 > .avatar-1BDn8e, /* avatars in chat */
+.avatarContainer-28iYmV /* avatars in voicechat */
+{
+    border-width: 2px;
+    border-color: var(--border);
+    border-style: solid;
+    padding: 1px;
+}
+
+.avatar-1BDn8e:hover, /* avatars in chat */
+.avatarContainer-28iYmV:hover /* avatars in voicechat */
+{
+    border-width: 4px;
+}
+
+
+.pointerEvents-2zdfdO /* that status dots */
+{
+    opacity:0.5;
+}
+
+
+.username-1A8OIy.clickable-1bVtEA,  /* username in chat */
+.roleColor-rz2vM0,  /* username in memberlist */
+.headerTagNoNickname-ENx6no.headerTag-2pZJzA.size14-3iUx6q.size16-14cGz5.nameTag-m8r81H, /* user profile nickname */
+.nameTag-2IFDfL.nameTag-m8r81H, /* username in profile */
+.size14-e6ZScH.title-eS5yk3,  /* local user name and game*/
+.username-2b1r56.username-31C1TQ, /* friends tab usernames */
+.colorStandard-2KCXvj.size16-1P40sf.sectionTitle-b-eawy.textContent-3N7xXx, /* usernames in active now tab */
+.usernameFont-23TX-h.username-3KYl0N, /* usernames in voice*/
+.headerName-fajvi9.size16-14cGz5, /* another user profile nickname */
+.headerTagWithNickname-3IthZD.headerTag-2pZJzA.size14-3iUx6q.nameTag-m8r81H, /* user profile tag */
+.name-hpTFiv, /* name in reply */
+.mention.wrapper-3WhCwL.mention.interactive, /* user and channel mention in chat */
+.colorInteractiveActive-3Ip9Eu.size16-1P40sf, /* mention autocompleter */
+.colorInteractiveNormal-PB7JN3.size12-3cLvbJ.autocompleteRowContentSecondary-1tgI-F, /* mention autocompleter */
+.mention.roleMention-2Bj0ju.wrapper-3WhCwL.mention, /* everyone and here mention */
+.username-1A8OIy, /* name in search */
+.match-38WbBN, /* nickname in "find or start conservation" */
+.username-2hHyRL, /* tag in "find or start conservation" */
+.content-2M3n_H .anchor-3Z-8Bb.anchorUnderlineOnHover-2ESHQB /* nickname in "started a call" */
+{
+    background: linear-gradient(to right, var(--user-gradient-1), var(--user-gradient-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.homeIcon-FuNwkv, /* home icon */
+.typing-2GQL18.base-gE7OpD /* "username" is typing animation */
+{
+    display:none;
+}
+
+.childWrapper-anI2G9 /* replacing home icon */
+{
+    background-image: url(https://media.giphy.com/media/ij1WvlilscRFoIRn7u/giphy.gif);
+    background-size: contain;
+}
+.channelName-2YrOjO, /* all channels names */
+.title-29uC1r.base-1x0h_U.size16-1P40sf /* channels names in up */
+{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.iconVisibility-sTNpHs.wrapper-2jXpOf.modeUnread-1qO3K1 .channelName-2YrOjO, /* unread channels names */
+.title-29uC1r.base-1x0h_U.size16-1P40sf, /* channels names in up*/
+.containerDefault--pIXnN.selected-3LIHYU * .channelName-2YrOjO /* selected channel name */
+{
+    background: linear-gradient(to right, var(--channelNames-gradient-1), var(--channelNames-gradient-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.containerDefault--pIXnN.selected-3LIHYU * .content-1x5b-n /* selected channel */
+{
+     animation: 3s rainbow_shadow linear infinite;
+     background: black;
+}
+
+.unread-2lAfLh, /* unread mark around channel */
+.item-2hkk8m /* unread mark around ds server , also selected server mark*/
+{
+    background: var(--main)
+}
+
+#private-channels [href="/discovery"] /* stage discovery */
+{
+    display: none;
+}
+
+
+.form-2fGMdU /* input */
+{
+    background-color: transparent;
+}
+
+.mainContent-2h-GEV * .overflow-WK9Ogt::before /* sections names */
+{
+   content: url("https://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/16/Folder-icon.png")
+} 
