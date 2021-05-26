@@ -5,15 +5,16 @@
  * @description idk
  */
 
-:root
+
+ :root
 {
    --background: #d88df7;
    --main: #dd8cff;
    --border: #CE5B78;
-   --user-gradient-1: #80f0ff;
-   --user-gradient-2: #d780ff;
+   --user-gradient-1: #66d9ed;
+   --user-gradient-2: #d69df7;
    --channelNames-gradient-1: #59ffd3;
-   --channelNames-gradient-2: #c259ff;
+   --channelNames-gradient-2: #59d6ff;
 }
 
 @keyframes rainbow_shadow
@@ -115,9 +116,11 @@ body
 
 .childWrapper-anI2G9 /* replacing home icon */
 {
-    background-image: url(https://media.giphy.com/media/ij1WvlilscRFoIRn7u/giphy.gif);
+    background-image: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
     background-size: contain;
 }
+
+
 .channelName-2YrOjO, /* all channels names */
 .title-29uC1r.base-1x0h_U.size16-1P40sf /* channels names in up */
 {
@@ -160,5 +163,5 @@ body
 
 .mainContent-2h-GEV * .overflow-WK9Ogt::before /* sections names */
 {
-   content: url("https://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/16/Folder-icon.png")
+   content: "📁  ";
 } 
