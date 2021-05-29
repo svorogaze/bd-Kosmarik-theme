@@ -1,6 +1,6 @@
 /**
- * @name svorogaze
- * @author Kosmarik
+ * @name kosmarik
+ * @author svorogaze
  * @version 0.1
  * @description idk
  */
@@ -9,33 +9,35 @@
  :root
 {
     /* my vars */
-    --background-color-1:rgb(25, 25, 31);
-    --background-color-2:rgb(35, 35, 35);
-    --background-color-3:rgb(33, 33, 46);
+    --background-color-1:rgb(38, 38, 44);
+    --background-color-3:rgb(32, 32, 38);
     --main: #56f7cc;
-   --channelNames-gradient-1: #59ffd3;
+   --channelNames-gradient-1: #56f7cc;
    --channelNames-gradient-2: #59d6ff;
    --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
    
-   /*discord vars */
+}
+
+.theme-dark,
+.theme-light
+{
+    /*discord vars */
    --background-floating: var(--background-color-3); /* color of floating background */
    --background-secondary: var(--background-color-1); /* color */
    --background-tertiary: var(--background-color-1); /* color of servers tab*/
    --background-modifier-accent:#414040fd; /* color of dividers */
-   --background-modifier-selected: var(--background-color-2);
-   --background-modifier-active:var(--background-color-2);
+   --background-modifier-selected: var(--background-color-3);
+   --background-modifier-active:var(--background-color-3);
    --background-secondary-alt:var(--background-color-1);
    --background-primary:var(--background-color-1);
-   --background-accent: rgb(54, 54, 54, 0.7);
+   --background-accent: var(--background-color-3);
 
     --scrollbar-thin-thumb: var(--main);
     --scrollbar-thin-track: transparent;
-    --text-muted: var(--main) ; 
+    --text-muted:var(--main); 
     --scrollbar-auto-scrollbar-color-thumb: var(--main);
     --scrollbar-auto-scrollbar-color-track:transparent;
     --deprecated-text-input-bg: var(--background-color-1);
-   
-    
 }
 
 @keyframes rainbow_shadow
@@ -73,6 +75,13 @@
         box-shadow: 0px 4px 0px #ff8a8a;
     }
 
+}
+@keyframes expand
+{
+    to
+    {
+        width: 140px;
+    }
 }
 
 .username-1A8OIy.clickable-1bVtEA,  /* username in chat */
@@ -177,7 +186,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 
 .profileBanner-33-uE1 /* top banner in profile */
 {
-    background: transparent !important;
+    visibility:hidden;
 }
 
 .container-q03LZO.profileBadges-1dm1_q  /* profile badges */
@@ -213,7 +222,8 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 {
     background: var(--background-color-1);
 }
-.resultsGroup-r_nuzN /* seatch tab */
+
+.resultsGroup-r_nuzN /* search tab */
 {
     background: var(--background-floating);
 }
@@ -231,4 +241,25 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 ::-webkit-scrollbar-track
 {
     background-color: transparent !important; 
+}
+
+.emojiItemDisabled-1FvFuF /* disabled emojis */
+{
+    filter:none;
+}
+
+.scrollbarGhostHairline-1mSOM1.scrollbar-3dvm_9.hljs /* code block */
+{
+    background:var(--background-floating);
+}
+
+.searchBar-3dMhjb /* search bar */
+{
+    width:16px;
+}
+
+[class$="search-2oPWTC"] > .searchBar-3dMhjb:hover /* :hover search bar */
+{
+    animation: 1s expand linear;
+    animation-fill-mode: forwards;
 }
