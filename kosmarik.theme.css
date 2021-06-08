@@ -12,7 +12,7 @@
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
     --selected-channel-color:rgb(15, 15, 15);
-    --main: #de68fb;
+    --main:  #56f7cc;
    --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
    --popouts-border-radius: 40px;
    --bars-border-radius: 30px;
@@ -107,7 +107,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 .title-29uC1r.base-1x0h_U.size16-1P40sf /* channels names in up */
 {
     font-size: 12.25px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 [class*="modeUnread"] [class*="channelName"], /* unread channels names */
@@ -214,13 +214,13 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 :not([class*="focused"])[class*="search-"] > [class^="searchBar-"] /* search bar */
 {
     width: 16px;
-    transition: 1s
+    transition: 1s;
 }
 
 :not([class*="focused"])[class*="search-"] > [class^="searchBar-"]:hover /* :hover search bar searchBar- */
 {
-    width:240px;
-    background: var(--background-floating);
+    background: var(--background-color-2);
+    width: 140px;
 }
 
 ::-webkit-scrollbar-thumb
@@ -235,15 +235,20 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 
 [class*="emojiItemDisabled-"] /* disabled emojis */
 {
-    filter:none;
+    filter: none;
 }
 
-.scrollbar-3dvm_9.hljs, /* code block */
+[class*="scrollbar-"][class*="hljs"], /* code block */
 [class*="grid"], /* all embeds*/
 code.inline, /* quotes and other markups */
 [class^="reaction-"] /* reactions */
 {
     background: var(--background-floating);
+}
+
+[class*="scrollbar-"][class*="hljs"] /* code block */
+{
+    border: 1px solid var(--main);
 }
 
 [class*="wordmark-"] > svg /* 'DISCORD' sign on top of the window */
@@ -264,7 +269,7 @@ code.inline, /* quotes and other markups */
     text-align: center;
 }
 
-[class^="colorMuted-"][class*="mentionButton-"] /* mention:off reply */
+[class^="colorMuted-"][class*="mentionButton-"] /* reply mention:off */
 {
     color:grey;
 }
@@ -295,7 +300,12 @@ code.inline, /* quotes and other markups */
     border-radius: var( --popouts-border-radius);
 }
 
-[class*="search-"] svg[class^="icon-"] > path
+[class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
 {
-    fill:var(--text-normal);
+    fill: var(--text-normal);
+}
+
+[class*="divider"][class*="hasContent-"] > * /* date divider */
+{
+    border: 1px solid var(--main);
 }
