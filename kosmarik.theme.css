@@ -13,6 +13,7 @@
     --background-color-2: rgb(53, 53, 59);
     --selected-channel-color:rgb(15, 15, 15);
     --main:  #56f7cc;
+    --mention-color: rgb(144, 71, 204);
    --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
    --popouts-border-radius: 40px;
    --bars-border-radius: 30px;
@@ -104,7 +105,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 }
 
 [class*="channelName"], /* all channels names */
-.title-29uC1r.base-1x0h_U.size16-1P40sf /* channels names in up */
+[class^="title-"][class*="container"] > [class^="children"] > [class^="title"] /* channels names in up */
 {
     font-size: 12.25px;
     font-weight: 500;
@@ -144,15 +145,15 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     font-size: 12px;
 }
 
-.avatar-22FtUu /* avatar in profile */
+[class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] > [class*="avatar"] /* avatar in user popout */
 {
-    border:none;
+    border-color:transparent;
 }
 
-.avatarWrapperNormal-2tu8Ts.avatarWrapper-1-5NA0.avatarPositionNormal-1CZUPk > * /*  avatar's wrapper and svg in profile */
+[class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] /*  avatar's wrapper and svg in user popout */
 {
-    top:15px;
-    left:92px;
+    top:20px;
+    left:105px;
 }
 
 [class*="profileBanner"] /* top banner in profile */
@@ -160,15 +161,20 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     visibility:hidden;
 }
 
+[class^="aboutMeSection"] > [class^="aboutMe"] /* about me section header and body */
+{
+    text-align:center;
+    display:block;
+}
+
 [class*="profileBadge18"]  /* profile badges */
 {
     display: none;
 }
 
-.headerTop-2y3V6H /* bottom banner in profile */
+[class*="userPopout"] [class^="headerTop"] /* bottom banner in profile */
 {
     border-bottom: none;
-    background: var(--background-floating) !important;
 }
 
 .headerTextNormal-2mGWX3.headerText-1HLrL7.flex-1O1GKY.marginBottom8-AtZOdT /* activity in user popout, 'playing a game' etc. */
@@ -192,8 +198,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 
 [class^="newMessagesBar"] /* new messages bar */
 {
-    opacity: 0.98;
-    background: var(--background-color-2);
+    background: var(--background-floating);
 }
 
 [class*="tabBody"] /* friends tab */
@@ -295,9 +300,25 @@ code.inline, /* quotes and other markups */
 }
 
 [class^="userPopout"], /* user popout */
-[class^="inner-"] > [class*="noWrap-"] /* user profile popout */
+[class^="focusLock-"] > [class*="root"] /* user profile popout */
 {
     border-radius: var( --popouts-border-radius);
+}
+
+[class^="focusLock"] [class*="activityHeader-"] /* custom status in user profile */
+{
+    display: block;
+    text-align: center;
+}
+
+[class^="focusLock"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
+{
+    border-radius: var(--bars-border-radius);
+}
+
+[class^="focusLock"] [class*="avatar"]
+{
+    border-color: transparent;
 }
 
 [class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
@@ -305,7 +326,47 @@ code.inline, /* quotes and other markups */
     fill: var(--text-normal);
 }
 
-[class*="divider"][class*="hasContent-"] > * /* date divider */
+[class*="divider"][class*="hasContent-"] > [class^="content-"], /* date divider */
+[class*="divider"][class*="hasContent-"]
 {
+    color: var(--main);
     border: 1px solid var(--main);
+}
+
+[class^="callContainer"] > [class^="root-"] /* call background */
+{
+    background: var(--background-color-1);
+}
+
+[class^="userPopout"] [class^="roleCircle-"],  /* role circle in user popout */
+[class^="userPopout"] [class^="roleName-"] /* role name in user popout */
+{
+    margin-right: 0px;
+    transition: 0.25s ease;
+}
+
+[class^="userPopout"] [class^="roleName-"] /* role name in user popout */
+{
+    width: 0px;
+}
+
+[class^="userPopout"] [class*="role-"]:hover > [class^="roleName-"] /* role name in user popout when role is hovered */
+{
+    width: fit-content;
+    margin-right: 4px; /* default margin */
+}
+
+[class^="userPopout"] [class*="role-"]:hover > [class^="roleCircle-"] /* role circle in user popout when role is hovered*/
+{
+    margin-right: 4px; /* default margin */
+}
+
+[class^="replyBar"] /* reply bar */
+{
+    background: var(--background-floating)
+}
+
+[class*="mention "][class*="wrapper"] /* mentions */
+{
+    background: var(--mention-color);
 }
