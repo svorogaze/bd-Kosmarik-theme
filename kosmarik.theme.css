@@ -225,7 +225,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 :not([class*="focused"])[class*="search-"] > [class^="searchBar-"]:hover /* :hover search bar searchBar- */
 {
     background: var(--background-color-2);
-    width: 140px;
+    width: 240px;
 }
 
 ::-webkit-scrollbar-thumb
@@ -269,9 +269,37 @@ code.inline, /* quotes and other markups */
     content: "Kosmarik";
 }
 
-[class*="membersGroup-"] /* roles in members tab*/
+[class^="membersWrap-"] [class*="membersGroup-"] /* roles in members tab*/
 {
     text-align: center;
+}
+
+[class^="membersWrap-"] [class*="membersGroup-"] > span /* roles in members tab*/
+{
+    display: flex;
+}
+
+[class^="membersWrap-"] [class^="membersGroup-"] > span::before,  /* ::before role in members tab*/
+[class^="membersWrap-"] [class^="membersGroup-"] > span::after /* :after role in members tab*/
+{
+    content:"";
+    display: flex;
+    height: 2px;
+    flex-grow: 1;
+    position: relative;
+    top: 6.5px;
+}
+
+[class^="membersWrap-"] [class^="membersGroup-"] > span::before /* ::before role in members tab*/
+{
+    background: linear-gradient(to left, var(--main) 50%, transparent);
+    margin-right: 5px;
+}
+
+[class^="membersWrap-"] [class^="membersGroup-"] > span::after /* :after role in members tab*/
+{
+    background-image: linear-gradient(to right, var(--main) 50%, transparent);
+    margin-left: 5px;
 }
 
 [class^="colorMuted-"][class*="mentionButton-"] /* reply mention:off */
@@ -305,6 +333,13 @@ code.inline, /* quotes and other markups */
     border-radius: var( --popouts-border-radius);
 }
 
+[class*="userPopout"] [class^="role-"] /* mobile style roles in user popout*/
+{
+    background:var(--background-color-1);
+    border-radius: 0;
+    border:none;
+}
+
 [class^="focusLock"] [class*="activityHeader-"] /* custom status in user profile */
 {
     display: block;
@@ -336,29 +371,6 @@ code.inline, /* quotes and other markups */
 [class^="callContainer"] > [class^="root-"] /* call background */
 {
     background: var(--background-color-1);
-}
-
-[class^="userPopout"] [class^="roleCircle-"],  /* role circle in user popout */
-[class^="userPopout"] [class^="roleName-"] /* role name in user popout */
-{
-    margin-right: 0px;
-    transition: 0.25s ease;
-}
-
-[class^="userPopout"] [class^="roleName-"] /* role name in user popout */
-{
-    width: 0px;
-}
-
-[class^="userPopout"] [class*="role-"]:hover > [class^="roleName-"] /* role name in user popout when role is hovered */
-{
-    width: fit-content;
-    margin-right: 4px; /* default margin */
-}
-
-[class^="userPopout"] [class*="role-"]:hover > [class^="roleCircle-"] /* role circle in user popout when role is hovered*/
-{
-    margin-right: 4px; /* default margin */
 }
 
 [class^="replyBar"] /* reply bar */
