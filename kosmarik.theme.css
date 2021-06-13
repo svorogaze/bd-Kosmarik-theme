@@ -4,12 +4,12 @@
  * @version 0.2
  * @description Simple dark theme 
  */
+
  @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
  @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
 {
-    --background-image: url("https://s1.1zoom.ru/b5050/458/Castles_Dishonored_510159_1920x1080.jpg");
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
     --selected-channel-color:rgb(15, 15, 15);
@@ -118,24 +118,25 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 }
 
 [class*="modeUnread"] [class*="channelName"], /* unread channels names */
-.title-29uC1r.base-1x0h_U.size16-1P40sf, /* channels names in up*/
+[class^="chat-"] > section[class^="title-"][class*="container-"] [class^="title-"], /* channels names in up*/
 [class*="selected"] * [class*="channelName"], /* selected channel name */
 [class*="modeSelected"] * [class*="channelName"], /* selected voice channel */
-[class*="modeConnected"] * [class*="channelName"]/* joined voice channel */
+[class*="modeConnected"] * [class*="channelName"] /* joined voice channel */
 {
-    color: var(--main)
+    color: var(--main);
 }
 
+[class^="member-"][class*="selected"][class*="container"][aria-controls^="popout_"] > [class^="layout"], /* selected user in members tab*/
 [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
-.iconVisibility-sTNpHs.wrapper-2jXpOf.modeSelected-346R90  .content-1x5b-n  /* selected voice channel */
+div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"]  /* selected voice channel */
 {
      animation: 3s rainbow_shadow linear infinite;
      background: var( --selected-channel-color);
-     margin-bottom: 2.25px;
+     margin-bottom: 2.5px;
 }
 
 [class^="unread-"], /* unread mark around channel */
-.item-2hkk8m /* unread mark around ds server , also selected server mark*/
+[class^="listItem-"] > [class^="pill-"][class*="wrapper"] > [class^="item-"] /* unread mark around ds server , also selected server mark*/
 {
     background: var(--main);
 }
@@ -216,7 +217,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     background: var(--background-floating);
 }
 
-.option-96V44q::after /* ::after option in search */
+#search-results > [class^="resultsGroup-"] > [class^="option-"]::after /* ::after option in search */
 {
 	display: none;
 }
@@ -321,13 +322,18 @@ code.inline, /* quotes and other markups */
     color:grey;
 }
 
-.inner-3nWsbo, /* child of pop-up 'add a comment' when you upload picture in chat*/
-.footer-3mqk7D.hasSpoilers-1IRtQC /* child of pop-up 'add a comment' when you upload picture in chat*/
+div[class^="inner-"] > div[class^="uploadModal-"] > * /* children of 'upload picture in chat' popout*/
 {
     background: var(--background-floating);
 }
 
-.button-1YfofB.buttonColor-7qQbGO, /* video and screen buttons*/
+div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a comment' child of 'upload picture in chat' popout*/
+{
+    background: var(--background-secondary);
+}
+
+[class^="actionButtons-"]  > button[class*="buttonColor"][class*="lookFilled"]:not([class*="Active"]), /* video and screen buttons*/
+[class^="actionButtons-"]  > span[class^="disabledButtonWrapper-"], /* disabled video and screen buttons*/
 [class^="expandedFolderBackground"], /* expanded folder background */
 [class^="expandedFolderIconWrapper"], /* expanded folder icon */
 [class^="folderIconWrapper-"] /* normal folder icon */
@@ -350,7 +356,7 @@ code.inline, /* quotes and other markups */
 [class*="userPopout"] [class^="role-"] /* mobile style roles in user popout*/
 {
     background: var(--background-color-1);
-    border-radius: 0;
+    border-radius: 0px;
     border: none;
 }
 
@@ -417,7 +423,7 @@ code.inline, /* quotes and other markups */
 [class*="withFrame-"][class*="titleBar-"] > :nth-child(3) > svg > rect,  /* max window button */
 [class*="withFrame-"][class*="titleBar-"] > :nth-child(4) > svg > rect /* hide window button */
 {
-    display:none;
+    display: none;
 }
 
 [class*="withFrame-"][class*="titleBar-"] > :nth-child(2) > svg /* close window button */
@@ -461,15 +467,15 @@ code.inline, /* quotes and other markups */
 
 [class^="actionButtons-"] [class^="buttonIcon"] /* icons of video and screen buttons */
 {
-    margin:0px;
+    margin: 0px;
 }
 
 [class^="iconWrapper-"][class*="clickable-"][role="button"] > span[class^="iconBadge-"] /* "new pins" circle*/
 {
-    background:var(--main);
+    background: var(--main);
 }
 
-[mask*="url(#svg-mask-status-"] /* pointer events */
+[mask*="url(#svg-mask-status-"]:not([mask*="mobile"]) /* pointer events */
 {
     mask: url(#svg-mask-status-online);
 }
