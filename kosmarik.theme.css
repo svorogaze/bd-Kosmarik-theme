@@ -13,8 +13,8 @@
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
     --selected-channel-color:rgb(15, 15, 15);
-    --main:  #56f7cc;
-    --mention-color: rgb(144, 71, 204);
+    --main:  #34dbd3;
+    --mention-color: rgb(30, 130, 197);
     --close-window-button-color:#ff605c;
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
@@ -94,7 +94,8 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     background-size: contain;
 }
 
-.contents-18-Yxp.button-3AYNKb.button-318s1X /* send a nitro and gif button */
+[class^="buttons-"] > button[class*="lookBlank-"][class*="grow-"] > div:not([class*="translateButton-"]), /* send a nitro button */
+[class^="buttons-"] > div[class^="buttonContainer"] > button:not([class^="emojiButton"])[class*="lookBlank-"][class*="grow-"] /* send a gif button */
 {
     display: none;
 }
@@ -150,10 +151,20 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     left:105px;
 }
 
-[class*="popoutBanner-"], /* top banner in user popout */
-[class*="profileBanner-"] /*  banner in user profile */
+[class*="popoutBanner"], /* top banner in user popout */
+[class*="profileBanner"] /*  banner in user profile */
 {
     visibility:hidden;
+}
+
+[class*="popoutBanner"] /* top banner in user popout */
+{
+    height:60px !important;
+}
+
+[class*="profileBanner"] /*  banner in user profile */
+{
+    height:75px;
 }
 
 [class^="aboutMeSection"] > [class^="aboutMe"] /* about me section header and body */
@@ -338,9 +349,9 @@ code.inline, /* quotes and other markups */
 
 [class*="userPopout"] [class^="role-"] /* mobile style roles in user popout*/
 {
-    background:var(--background-color-1);
+    background: var(--background-color-1);
     border-radius: 0;
-    border:none;
+    border: none;
 }
 
 [class^="focusLock"] [class*="activityHeader-"] /* custom status in user profile */
@@ -371,6 +382,22 @@ code.inline, /* quotes and other markups */
     border: 1px solid var(--main);
 }
 
+[class^="chatContent"] #---new-messages-bar /* new messages divider */
+{
+    border-color: var(--main);
+}
+
+[class*="divider"] > [class^="unreadPill-"] /* new messages divider */
+{
+    background: var(--main);
+}
+
+[class^="unreadPillCapStroke-"] /* new messages divider */
+{
+    fill: var(--main);
+    color: var(--main);
+}
+
 [class^="callContainer"] > [class^="root-"] /* call background */
 {
     background: var(--background-color-1);
@@ -386,32 +413,63 @@ code.inline, /* quotes and other markups */
     background: var(--mention-color);
 }
 
-[class^="typeWindows-"] > :nth-child(2) > svg > polygon, /* close window button */
-[class^="typeWindows-"] > :nth-child(3) > svg > rect,  /* max window button */
-[class^="typeWindows-"] > :nth-child(4) > svg > rect /* hide window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(2) > svg > polygon, /* close window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(3) > svg > rect,  /* max window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(4) > svg > rect /* hide window button */
 {
     display:none;
 }
 
-[class^="typeWindows-"] > :nth-child(2) > svg /* close window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(2) > svg /* close window button */
 {
     background: var(--close-window-button-color);
     border-radius: var(--window-buttons-border-radius);
 }
 
-[class^="typeWindows-"] > :nth-child(3) > svg /* max window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(3) > svg /* max window button */
 {
     background: var(--max-window-button-color);
     border-radius: var(--window-buttons-border-radius);
 }
 
-[class^="typeWindows-"] > :nth-child(4) > svg /* hide window button */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(4) > svg /* hide window button */
 {
     background: var(--hide-window-button-color);
     border-radius: var(--window-buttons-border-radius);
 }
 
-[class^="typeWindows-"] > :nth-child(2):hover /* close window button on hover */
+[class*="withFrame-"][class*="titleBar-"] > :nth-child(2):hover /* close window button on hover */
 {
     background: var(--background-modifier-hover);
+}
+
+
+[class^="perksModal-"][class*="scrollerBase-"] /* server boost window */
+{
+    background: var(--background-color-1) !important;
+}
+
+[class^="perksModal-"] [class^="ctaBar-"] /* bar inside server boost window */
+{
+    background-image: none;
+}
+
+[class^="actionButtons-"] * /* video and screen buttons */
+{
+    font-size: 0px;
+}
+
+[class^="actionButtons-"] [class^="buttonIcon"] /* icons of video and screen buttons */
+{
+    margin:0px;
+}
+
+[class^="iconWrapper-"][class*="clickable-"][role="button"] > span[class^="iconBadge-"] /* "new pins" circle*/
+{
+    background:var(--main);
+}
+
+[mask*="url(#svg-mask-status-"] /* pointer events */
+{
+    mask: url(#svg-mask-status-online);
 }
