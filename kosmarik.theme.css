@@ -20,7 +20,7 @@
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
     --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
-   --popouts-border-radius: 40px;
+    --popouts-border-radius: 40px;
     --window-buttons-border-radius: 8px;
 }
 
@@ -126,13 +126,14 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     color: var(--main);
 }
 
-[class^="member-"][class*="selected"][class*="container"][aria-controls^="popout_"] > [class^="layout"], /* selected user in members tab*/
+[class^="member-"][class*="container"][aria-controls^="popout_"][aria-expanded="true"] > [class^="layout"], /* selected user in members tab*/
 [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
 div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"]  /* selected voice channel */
 {
-     animation: 3s rainbow_shadow linear infinite;
-     background: var( --selected-channel-color);
-     margin-bottom: 2.5px;
+    transition: background 1s ease-in; 
+    animation: 3s rainbow_shadow linear infinite;
+    background: var( --selected-channel-color);
+    margin-bottom: 2.5px;
 }
 
 [class^="unread-"], /* unread mark around channel */
@@ -479,3 +480,110 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 {
     mask: url(#svg-mask-status-online);
 }
+
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
+{
+    position: relative;
+    bottom: 2px;
+    display: flex;
+    content: '';
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab*/
+{
+    display:flex;
+}
+
+[aria-controls="My Account-tab"]::before /* My Accout*/
+{
+    background-image: url('https://i.imgur.com/cLXgAKh.png');
+}
+
+
+[aria-controls="Privacy & Safety-tab"]::before /* Privacy & Safety */
+{
+    background-image: url('https://i.imgur.com/z3a1WZ8.png');
+}
+
+[aria-controls="Authorized Apps-tab"]::before /* Authorized Apps */
+{
+    background-image: url('https://i.imgur.com/kqRl2E2.png');
+}
+
+[aria-controls="Connections-tab"]::before /* Connections */
+{
+    background-image: url('https://imgur.com/2AosRuA.png');
+}
+
+[aria-controls="Discord Nitro-tab"]::before /* Subscriptions */
+{
+    background-image: url('https://imgur.com/BrD1FYP.png');
+    left: -2.5px !important;
+}
+
+[aria-controls="Nitro Server Boost-tab"]::before /* Server Boost */
+{
+    background-image: url('https://imgur.com/gf7xncA.png');
+}
+
+[aria-controls="Library Inventory-tab"]::before /* Gift Inventory */
+{
+    background-image: url('https://imgur.com/Yzx2VLS.png');
+}
+
+[aria-controls="Billing-tab"]::before /* Billing */
+{
+    background-image: url('https://imgur.com/TovC75H.png');
+}
+
+[aria-controls="Appearance-tab"]::before /* Appearance */
+{
+    background-image: url('https://imgur.com/SghFGlj.png');
+}
+
+[aria-controls="Accessibility-tab"]::before /* Accessibility */
+{
+    background-image: url('https://imgur.com/u1OgeaJ.png');
+}
+
+[aria-controls="Voice & Video-tab"]::before /* Voice And Video */
+{
+    background-image: url('https://imgur.com/FWnnG6c.png');
+}
+
+[aria-controls="Text & Images-tab"]::before /* Text and images */
+{
+    background-image: url('https://imgur.com/p97M1Hz.png');
+}
+
+[aria-controls="Notifications-tab"]::before /* Notifications */
+{
+    background-image: url('https://imgur.com/IBJQ4zF.png');
+}
+
+[aria-controls="Keybinds-tab"]::before /* Keybinds */
+{
+    background-image: url('https://imgur.com/SEAdoo9.png');
+}
+
+[aria-controls="Language-tab"]::before /* Language */
+{
+    background-image: url('https://imgur.com/UObnIKJ.png');
+}
+
+[aria-controls="Windows-tab"]::before /* Windows settings */
+{
+    background-image: url('https://imgur.com/LNkwQd0.png');
+}
+
+[aria-controls="Linux-tab"]::before /* Linux settings */
+{
+    background-image: url('https://imgur.com/rIXwJcj.png');
+}
+
