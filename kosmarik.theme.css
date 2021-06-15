@@ -5,8 +5,8 @@
  * @description Simple dark theme 
  */
 
- @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
- @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
 {
@@ -21,6 +21,7 @@
     --code-border: var(--main);
     --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
     --popouts-border-radius: 40px;
+    --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
 }
 
@@ -126,7 +127,6 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
     color: var(--main);
 }
 
-[class^="member-"][class*="container"][aria-controls^="popout_"][aria-expanded="true"] > [class^="layout"], /* selected user in members tab*/
 [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
 div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"]  /* selected voice channel */
 {
@@ -191,9 +191,9 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     display:block;
 }
 
-[class*="userSelectText-"] *, /* nickname and tag in profile */
+[class*="userSelectText-"] *, /* nickname and tag in user popout */
 [class*="customStatus"], /* custom status*/
-[class^="bodyTitle-"] /* roles and note in profile */
+[class^="bodyTitle-"] /* roles and note in  user popout */
 {
     text-align: center;
 }
@@ -218,6 +218,11 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     background: var(--background-floating);
 }
 
+#search-results > [class^="queryContainer-"][id^="search-results"] /* query container in search results*/
+{
+    background: var(--background-floating);
+}
+
 #search-results > [class^="resultsGroup-"] > [class^="option-"]::after /* ::after option in search */
 {
 	display: none;
@@ -229,7 +234,8 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     transition: 1s;
 }
 
-:not([class*="focused"])[class*="search-"] > [class^="searchBar-"]:hover /* :hover search bar searchBar- */
+:not([class*="focused"])[class*="search-"] > [class^="searchBar-"]:hover, /* :hover search bar */
+:not([class*="focused"])[class*="search-"][class*="open"] > [class^="searchBar-"] /* open search bar */
 {
     background: var(--background-color-2);
     width: 240px;
@@ -276,14 +282,33 @@ code.inline, /* quotes and other markups */
     content: "Kosmarik";
 }
 
+[class="bd-changelog-button"] /* bd changelog button in settings*/
+{
+    display:none;
+}
+
+[class="bd-sidebar-header"] /* bd sidebar header in settings*/
+{
+    width:175px;
+    margin-left:9px;
+}
+
+[class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
+{
+    padding:0px;
+}
+
 [class^="membersWrap-"] [class*="membersGroup-"], /* roles in members tab*/
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"] /* categories */
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"] /* headers in settings */
 {
     text-align: center;
 }
 
 [class^="membersWrap-"] [class*="membersGroup-"] > span, /* roles in members tab*/
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"] /* categories */
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"], /* headers in settings */
+[class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
 {
     color: var(--main);
     display: flex;
@@ -294,25 +319,29 @@ code.inline, /* quotes and other markups */
 [class^="membersWrap-"] [class^="membersGroup-"] > span::before,  /* ::before role in members tab*/
 [class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after /* ::after categories */
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::before, /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::after /* headers in settings */
 {
     content:"";
     display: flex;
     height: 2px;
-    flex-grow: 1;
+    width:1000px;
     position: relative;
     top: 6.5px;
 }
 
 [class^="membersWrap-"] [class^="membersGroup-"] > span::before, /* ::before role in members tab*/
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before /* ::before categories */
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::before /* headers in settings */
 {
     background: linear-gradient(to left, var(--main) 50%, transparent);
     margin-right: 5px;
 }
 
 [class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after /* ::after categories*/
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories*/
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::after /* ::after headers in settings */
 {
     background-image: linear-gradient(to right, var(--main) 50%, transparent);
     margin-left: 5px;
@@ -481,6 +510,11 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     mask: url(#svg-mask-status-online);
 }
 
+div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* nitro icon after subscriptions tab in settings*/
+{
+    display: none;
+}
+
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
 {
     position: relative;
@@ -587,3 +621,52 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background-image: url('https://imgur.com/rIXwJcj.png');
 }
 
+[aria-controls="Streamer Mode-tab"]::before /*Streamer Mode */
+{
+    background-image: url('https://imgur.com/eXfTMQT.png');
+}
+
+[aria-controls="Advanced-tab"]::before /* Advanced */
+{
+    background-image: url('https://imgur.com/vNHCZKi.png');
+}
+
+[aria-controls="Game Activity-tab"]::before /* Activity Status */
+{
+    background-image: url('https://imgur.com/7yRbzfm.png');
+}
+
+[aria-controls="Overlay-tab"]::before /* Game Overlay */
+{
+    background-image: url('https://imgur.com/Muxnf84.png');
+}
+
+[aria-controls="Settings-tab"]::before /* bd Settings */
+{
+    background-image: url('https://imgur.com/dRgyLtP.png');
+}
+
+[aria-controls="Emotes-tab"]::before /* bd Emotes */
+{
+    background-image: url('https://imgur.com/pNFeaPz.png');
+}
+
+[aria-controls="customcss-tab"]::before /* bd custom css */
+{
+    background-image: url('https://imgur.com/fXl2ckk.png');
+}
+
+[aria-controls="plugins-tab"]::before /* bd plugins */
+{
+    background-image: url('https://imgur.com/DMZahin.png');
+}
+
+[aria-controls="themes-tab"]::before /* bd themes */
+{
+    background-image: url('https://imgur.com/u6eMcUR.png');
+}
+
+[aria-controls="changelog-tab"]::before /* change log */
+{
+    background-image: url('https://imgur.com/VMPL5yg.png');
+}
