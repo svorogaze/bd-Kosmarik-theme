@@ -44,7 +44,7 @@
     --text-muted: var(--main); 
     --scrollbar-auto-scrollbar-color-thumb: var(--main);
     --scrollbar-auto-scrollbar-color-track:transparent;
-    --deprecated-text-input-bg: var(--background-color-1);
+    --deprecated-text-input-bg: var(--background-color-2);
 }
 
 @keyframes rainbow_shadow
@@ -142,24 +142,31 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     background: var(--main);
 }
 
-[class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] > [class*="avatar"] /* avatar in user popout */
+[class^="userPopout-"] [class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] > [class*="avatar"] /* avatar in user popout */
 {
     border-color:transparent;
 }
 
-[class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] /*  avatar's wrapper and svg in user popout */
+[class^="userPopout-"] [class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] /*  avatar's wrapper and svg in user popout */
 {
     top:20px;
     left:105px;
 }
 
-[class*="popoutBanner"], /* top banner in user popout */
+[class*="userPopout-"] [class^="role-"] /* mobile style roles in user popout*/
+{
+    background: var(--background-color-1);
+    border-radius: 0px;
+    border: none;
+}
+
+[class^="userPopout-"] [class*="popoutBanner"], /* top banner in user popout */
 [class*="profileBanner"] /*  banner in user profile */
 {
     visibility:hidden;
 }
 
-[class*="popoutBanner"] /* top banner in user popout */
+[class^="userPopout-"] [class*="popoutBanner"] /* top banner in user popout */
 {
     height:60px !important;
 }
@@ -191,9 +198,9 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     display:block;
 }
 
-[class*="userSelectText-"] *, /* nickname and tag in user popout */
+[class^="userPopout-"] [class*="userSelectText-"] *, /* nickname and tag in user popout */
 [class*="customStatus"], /* custom status*/
-[class^="bodyTitle-"] /* roles and note in  user popout */
+[class^="userPopout-"] [class^="bodyTitle-"] /* roles and note in  user popout */
 {
     text-align: center;
 }
@@ -282,32 +289,16 @@ code.inline, /* quotes and other markups */
     content: "Kosmarik";
 }
 
-[class="bd-changelog-button"] /* bd changelog button in settings*/
-{
-    display:none;
-}
-
-[class="bd-sidebar-header"] /* bd sidebar header in settings*/
-{
-    width:175px;
-    margin-left:9px;
-}
-
-[class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
-{
-    padding:0px;
-}
-
 [class^="membersWrap-"] [class*="membersGroup-"], /* roles in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"] /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"] /* headers in settings */
 {
     text-align: center;
 }
 
 [class^="membersWrap-"] [class*="membersGroup-"] > span, /* roles in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"], /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
 [class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
 {
     color: var(--main);
@@ -320,20 +311,20 @@ code.inline, /* quotes and other markups */
 [class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::before, /* headers in settings */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::after /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before, /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* headers in settings */
 {
     content:"";
     display: flex;
     height: 2px;
-    width:1000px;
+    flex-grow:1;
     position: relative;
     top: 6.5px;
 }
 
 [class^="membersWrap-"] [class^="membersGroup-"] > span::before, /* ::before role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::before /* headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
 {
     background: linear-gradient(to left, var(--main) 50%, transparent);
     margin-right: 5px;
@@ -341,7 +332,7 @@ code.inline, /* quotes and other markups */
 
 [class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories*/
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="header"]::after /* ::after headers in settings */
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
 {
     background-image: linear-gradient(to right, var(--main) 50%, transparent);
     margin-left: 5px;
@@ -377,31 +368,24 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     display: none;
 }
 
-[class^="userPopout"], /* user popout */
-[class^="focusLock-"] > [class*="root"] /* user profile popout */
+[class^="userPopout-"], /* user popout */
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) /* user profile popout */
 {
-    border-radius: var( --popouts-border-radius);
+    border-radius: var( --popouts-border-radius) !important;
 }
 
-[class*="userPopout"] [class^="role-"] /* mobile style roles in user popout*/
-{
-    background: var(--background-color-1);
-    border-radius: 0px;
-    border: none;
-}
-
-[class^="focusLock"] [class*="activityHeader-"] /* custom status in user profile */
+[class^="focusLock-"] [class*="activityHeader-"] /* custom status in user profile */
 {
     display: block;
     text-align: center;
 }
 
-[class^="focusLock"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
+[class^="focusLock-"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
 {
     border-radius: var(--bars-border-radius);
 }
 
-[class^="focusLock"] [class*="avatar"]
+[class^="focusLock-"] [class*="avatar"]
 {
     border-color: transparent;
 }
@@ -409,6 +393,11 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 [class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
 {
     fill: var(--text-normal);
+}
+
+[class^="chat-"] [class^="toolbar-"] > * /* tool icons in toolbar*/
+{
+    margin-left:2px;
 }
 
 [class*="divider"][class*="hasContent-"] > [class^="content-"], /* date divider */
@@ -532,6 +521,11 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab*/
 {
     display:flex;
+}
+
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]
+{
+    padding-top:0px;
 }
 
 [aria-controls="My Account-tab"]::before /* My Accout*/
@@ -666,7 +660,32 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-image: url('https://imgur.com/u6eMcUR.png');
 }
 
+[aria-controls="themerepo-tab"]::before /* bd Theme Repo */
+{
+    background-image: url('https://imgur.com/BAPpX9n.png');
+}
+
 [aria-controls="changelog-tab"]::before /* change log */
 {
     background-image: url('https://imgur.com/VMPL5yg.png');
+}
+
+[aria-controls="Hypesquad Online-tab"]::before /* HypeSquad */
+{
+    background-image: url('https://imgur.com/fr8M6rs.png');
+}
+
+[aria-controls="Experiments-tab"]::before /* Experiments */
+{
+    background-image: url('https://imgur.com/4MAIdQz.png');
+}
+
+[aria-controls="Developer Options-tab"]::before /* Developer Options */
+{
+    background-image: url('https://imgur.com/yyaArJc.png');
+}
+
+[aria-controls="logout-tab"]::before /* Log Out */
+{
+    background-image: url('https://imgur.com/uR85Ihr.png');
 }
