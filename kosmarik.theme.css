@@ -12,7 +12,7 @@
 {
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
-    --selected-channel-color:rgb(15, 15, 15);
+    --selected-channel-color:rgb(37, 130, 173);
     --main:  #34dbd3;
     --mention-color: rgb(30, 130, 197);
     --close-window-button-color:#ff605c;
@@ -23,6 +23,9 @@
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
+    --button-opacity: 0.5;
+    --hover-button-opacity: 1;
+    --hover-button-border: 1.5px solid var(--main);
 }
 
 .theme-dark,
@@ -38,6 +41,11 @@
    --background-secondary-alt: var(--background-color-1);
    --background-primary: var(--background-color-1);
    --background-accent: var(--background-color-2);
+   --brand-experiment:red;
+   /*--interactive-active:;
+   --interactive-normal:; */
+    /*--header-primary:
+    --header-secondary */
 
     --scrollbar-thin-thumb: var(--main);
     --scrollbar-thin-track: transparent;
@@ -47,43 +55,6 @@
     --deprecated-text-input-bg: var(--background-color-2);
 }
 
-@keyframes rainbow_shadow
-{
-    from
-    {
-        box-shadow: 0px 4px 0px #ff8a8a;
-    }
-    14%
-    {
-        box-shadow: 0px 4px 0px #ffcc8a;
-    }
-    28%
-    {
-        box-shadow: 0px 4px 0px #fff78a;
-    }
-    42%
-    {
-        box-shadow: 0px 4px 0px #96ff8a;
-    }
-    56%
-    {
-        box-shadow: 0px 4px 0px #8affec;
-    }
-    70%
-    {
-        box-shadow: 0px 4px 0px #8aabff;
-    }
-    84%
-    {
-        box-shadow: 0px 4px 0px #d48aff;
-    }
-    to
-    {
-        box-shadow: 0px 4px 0px #ff8a8a;
-    }
-
-}
-
 [class*="homeIcon"]
 {
     display:none;
@@ -91,8 +62,7 @@
 
 div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 {
-    background-image: var(--home-icon);
-    background-size: contain;
+    background: var(--home-icon) center/contain no-repeat;
 }
 
 [class^="buttons-"] > button[class*="lookBlank-"][class*="grow-"] > div:not([class*="translateButton-"]), /* send a nitro button */
@@ -130,7 +100,6 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
 div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"]  /* selected voice channel */
 {
-    transition: background 1s ease-in; 
     animation: 3s rainbow_shadow linear infinite;
     background: var( --selected-channel-color);
     margin-bottom: 2.5px;
@@ -296,6 +265,11 @@ code.inline, /* quotes and other markups */
     text-align: center;
 }
 
+[class^="members-"] [class^="activityText"] > strong /* Activity name in member tab*/
+{
+    color:var(--main);
+}
+
 [class^="membersWrap-"] [class*="membersGroup-"] > span, /* roles in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
@@ -366,6 +340,43 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 [class^="setIdentityLink-"] /* set a server nickname in your pop out*/
 {
     display: none;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="nameTag"] /* username in profile*/
+{
+    text-align: center;
+    display:block;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="nameTag"] > *:not([class*="bot" i]) /* children of username in profile*/
+{
+    display:inline;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="botTag-"] /* bot tag in user profile*/
+{
+    top:3px;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class*="badgeList-"] /* badge list in user profile*/
+{
+    margin:0px;
+    display: flex;
+    width:230px;
+    flex-wrap: wrap;
+    position: relative;
+    right:135px;
+    justify-content: flex-end;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class*="badgeList-"] [class*="profileBadgePremium-"] /* nitro badge in user profile*/
+{
+    width: 22px;
+}
+
+[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="avatar-"] /* avatar in user profile*/
+{
+    left:240px;
 }
 
 [class^="userPopout-"], /* user popout */
@@ -484,6 +495,25 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     font-size: 0px;
 }
 
+section[class^="panels-"] > [class^="container-"] > [class^="flex-"], /* mute, deafen, settings buttons' parent*/
+section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child /* parent of krisp and leave buttons */
+{
+    background: var(--background-floating);
+}
+
+section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button, /* mute, deafen, settings buttons */
+section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button  /* krisp and leave buttons */
+{
+    opacity: var(--button-opacity);
+}
+
+section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button:hover, /* mute, deafen, settings buttons on hover*/
+section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button:hover /* krisp and leave buttons */
+{
+    border: var(--hover-button-border);
+    opacity: var(--hover-button-opacity);
+}
+
 [class^="actionButtons-"] [class^="buttonIcon"] /* icons of video and screen buttons */
 {
     margin: 0px;
@@ -494,7 +524,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background: var(--main);
 }
 
-[mask*="url(#svg-mask-status-"]:not([mask*="mobile"]) /* pointer events */
+[class^="pointerEvents-"]:not([mask*="mobile"]) /* pointer events */
 {
     mask: url(#svg-mask-status-online);
 }
@@ -528,164 +558,174 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     padding-top:0px;
 }
 
-[aria-controls="My Account-tab"]::before /* My Accout*/
+[aria-controls="My Account-tab" i]::before /* My Accout*/
 {
-    background-image: url('https://i.imgur.com/cLXgAKh.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/account.png');
 }
 
 
-[aria-controls="Privacy & Safety-tab"]::before /* Privacy & Safety */
+[aria-controls="Privacy & Safety-tab" i]::before /* Privacy & Safety */
 {
-    background-image: url('https://i.imgur.com/z3a1WZ8.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/privacy.png');
 }
 
-[aria-controls="Authorized Apps-tab"]::before /* Authorized Apps */
+[aria-controls="Authorized Apps-tab" i]::before /* Authorized Apps */
 {
-    background-image: url('https://i.imgur.com/kqRl2E2.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/apps.png');
 }
 
-[aria-controls="Connections-tab"]::before /* Connections */
+[aria-controls="Connections-tab" i]::before /* Connections */
 {
-    background-image: url('https://imgur.com/2AosRuA.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/connections.png');
 }
 
-[aria-controls="Discord Nitro-tab"]::before /* Subscriptions */
+[aria-controls="Discord Nitro-tab" i]::before /* Subscriptions */
 {
-    background-image: url('https://imgur.com/BrD1FYP.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/nitro.png');
     left: -2.5px !important;
 }
 
-[aria-controls="Nitro Server Boost-tab"]::before /* Server Boost */
+[aria-controls="Nitro Server Boost-tab" i]::before /* Server Boost */
 {
-    background-image: url('https://imgur.com/gf7xncA.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/boost.png');
 }
 
-[aria-controls="Library Inventory-tab"]::before /* Gift Inventory */
+[aria-controls="Library Inventory-tab" i]::before /* Gift Inventory */
 {
-    background-image: url('https://imgur.com/Yzx2VLS.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/gift.png');
 }
 
-[aria-controls="Billing-tab"]::before /* Billing */
+[aria-controls="Billing-tab" i]::before /* Billing */
 {
-    background-image: url('https://imgur.com/TovC75H.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/billing.png');
 }
 
-[aria-controls="Appearance-tab"]::before /* Appearance */
+[aria-controls="Appearance-tab" i]::before /* Appearance */
 {
-    background-image: url('https://imgur.com/SghFGlj.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/appearance.png');
 }
 
-[aria-controls="Accessibility-tab"]::before /* Accessibility */
+[aria-controls="Accessibility-tab" i]::before /* Accessibility */
 {
-    background-image: url('https://imgur.com/u1OgeaJ.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/accessibility.png');
 }
 
-[aria-controls="Voice & Video-tab"]::before /* Voice And Video */
+[aria-controls="Voice & Video-tab" i]::before /* Voice And Video */
 {
-    background-image: url('https://imgur.com/FWnnG6c.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/mic.png');
 }
 
-[aria-controls="Text & Images-tab"]::before /* Text and images */
+[aria-controls="Text & Images-tab" i]::before /* Text and images */
 {
-    background-image: url('https://imgur.com/p97M1Hz.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/text.png');
 }
 
-[aria-controls="Notifications-tab"]::before /* Notifications */
+[aria-controls="Notifications-tab" i]::before /* Notifications */
 {
-    background-image: url('https://imgur.com/IBJQ4zF.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/notifications.png');
 }
 
-[aria-controls="Keybinds-tab"]::before /* Keybinds */
+[aria-controls="Keybinds-tab" i]::before /* Keybinds */
 {
-    background-image: url('https://imgur.com/SEAdoo9.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/keybinds.png');
 }
 
-[aria-controls="Language-tab"]::before /* Language */
+[aria-controls="Language-tab" i]::before /* Language */
 {
-    background-image: url('https://imgur.com/UObnIKJ.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/language.png');
 }
 
-[aria-controls="Windows-tab"]::before /* Windows settings */
+[aria-controls="Windows-tab" i]::before /* Windows settings */
 {
-    background-image: url('https://imgur.com/LNkwQd0.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/windows.png');
 }
 
-[aria-controls="Linux-tab"]::before /* Linux settings */
+[aria-controls="Linux-tab" i]::before /* Linux settings */
 {
-    background-image: url('https://imgur.com/rIXwJcj.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/linux.png');
 }
 
-[aria-controls="Streamer Mode-tab"]::before /*Streamer Mode */
+[aria-controls="Streamer Mode-tab" i]::before /*Streamer Mode */
 {
-    background-image: url('https://imgur.com/eXfTMQT.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/streamer.png');
 }
 
-[aria-controls="Advanced-tab"]::before /* Advanced */
+[aria-controls="Advanced-tab" i]::before /* Advanced */
 {
-    background-image: url('https://imgur.com/vNHCZKi.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/advanced.png');
 }
 
-[aria-controls="Game Activity-tab"]::before /* Activity Status */
+[aria-controls="Game Activity-tab" i]::before /* Activity Status */
 {
-    background-image: url('https://imgur.com/7yRbzfm.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/activity.png');
 }
 
-[aria-controls="Overlay-tab"]::before /* Game Overlay */
+[aria-controls="Overlay-tab" i]::before /* Game Overlay */
 {
-    background-image: url('https://imgur.com/Muxnf84.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/overlay.png');
 }
 
-[aria-controls="Settings-tab"]::before /* bd Settings */
+[aria-controls="Settings-tab" i]::before /* bd Settings */
 {
-    background-image: url('https://imgur.com/dRgyLtP.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/bd-settings.png');
 }
 
-[aria-controls="Emotes-tab"]::before /* bd Emotes */
+[aria-controls="Emotes-tab" i]::before /* bd Emotes */
 {
-    background-image: url('https://imgur.com/pNFeaPz.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/emotes.png');
 }
 
-[aria-controls="customcss-tab"]::before /* bd custom css */
+[aria-controls="customcss-tab" i]::before /* bd custom css */
 {
-    background-image: url('https://imgur.com/fXl2ckk.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/css.png');
 }
 
-[aria-controls="plugins-tab"]::before /* bd plugins */
+[aria-controls="plugins-tab" i]::before /* bd plugins */
 {
-    background-image: url('https://imgur.com/DMZahin.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/plugin.png');
 }
 
-[aria-controls="themes-tab"]::before /* bd themes */
+[aria-controls="themes-tab" i]::before /* bd themes */
 {
-    background-image: url('https://imgur.com/u6eMcUR.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/palette.png');
 }
 
-[aria-controls="themerepo-tab"]::before /* bd Theme Repo */
+[aria-controls="themerepo-tab" i]::before /* bd Theme Repo */
 {
-    background-image: url('https://imgur.com/BAPpX9n.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/theme-repo.png');
 }
 
-[aria-controls="changelog-tab"]::before /* change log */
+[aria-controls="changelog-tab" i]::before /* change log */
 {
-    background-image: url('https://imgur.com/VMPL5yg.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/changelog.png');
 }
 
-[aria-controls="Hypesquad Online-tab"]::before /* HypeSquad */
+[aria-controls="Hypesquad Online-tab" i]::before /* HypeSquad */
 {
-    background-image: url('https://imgur.com/fr8M6rs.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/squad.png');
 }
 
-[aria-controls="Experiments-tab"]::before /* Experiments */
+[aria-controls="Experiments-tab" i]::before /* Experiments */
 {
-    background-image: url('https://imgur.com/4MAIdQz.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/experiment.png');
 }
 
-[aria-controls="Developer Options-tab"]::before /* Developer Options */
+[aria-controls="Developer Options-tab" i]::before /* Developer Options */
 {
-    background-image: url('https://imgur.com/yyaArJc.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/dev-options.png');
 }
 
-[aria-controls="logout-tab"]::before /* Log Out */
+[aria-controls="logout-tab" i]::before /* Log Out */
 {
-    background-image: url('https://imgur.com/uR85Ihr.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/logout.png');
+}
+
+[class^="pageWrapper-"] /* explore public servers page*/
+{
+    background: var(--background-primary) !important;
+}
+
+div[class^="attachment"]
+{
+    background:var(--background-floating);
 }
