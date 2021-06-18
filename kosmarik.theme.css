@@ -12,9 +12,10 @@
 {
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
+    --button-background-hover:rgb(78, 78, 87);
     --selected-channel-color:rgb(37, 130, 173);
-    --main:  #34dbd3;
     --mention-color: rgb(30, 130, 197);
+    --main:  #34dbd3;
     --close-window-button-color:#ff605c;
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
@@ -41,11 +42,9 @@
    --background-secondary-alt: var(--background-color-1);
    --background-primary: var(--background-color-1);
    --background-accent: var(--background-color-2);
-   --brand-experiment:red;
-   /*--interactive-active:;
-   --interactive-normal:; */
-    /*--header-primary:
-    --header-secondary */
+   --brand-experiment-560:var(--button-background-hover) !important;
+   --brand-experiment-600: var(--button-background-hover) !important;
+   --brand-experiment: var(--background-floating) !important;
 
     --scrollbar-thin-thumb: var(--main);
     --scrollbar-thin-track: transparent;
@@ -247,32 +246,31 @@ code.inline, /* quotes and other markups */
 
 [class*="wordmark-"] > svg /* 'DISCORD' sign on top of the window */
 {
-        display:none;
+    display:none;
 }
 
 [class*="wordmark-"]::after /* after 'DISCORD' sign on top of the window */
 {
-    position: absolute;
     font-family: 'Fugaz One';
-    font-size:14.5px;
-    content: "Kosmarik";
+    font-size: 14.5px;
+    content: "Kosmarik" !important;
 }
 
-[class^="membersWrap-"] [class*="membersGroup-"], /* roles in members tab*/
-[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"] /* headers in settings */
-{
-    text-align: center;
-}
-
-[class^="members-"] [class^="activityText"] > strong /* Activity name in member tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class^="activityText"] > strong /* Activity name in members tab*/
 {
     color:var(--main);
 }
 
-[class^="membersWrap-"] [class*="membersGroup-"] > span, /* roles in members tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class*="membersGroup-"], /* roles in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"] /* headers in settings */
+{
+    text-align: center;
+}
+
+[class^="membersWrap-"][class*="hiddenMembers-"] [class*="membersGroup-"] > span, /* roles in members tab*/
+[class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
 [class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
 {
     color: var(--main);
@@ -281,12 +279,12 @@ code.inline, /* quotes and other markups */
     font-size: 11px !important;
 }
 
-[class^="membersWrap-"] [class^="membersGroup-"] > span::before,  /* ::before role in members tab*/
-[class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::before,  /* ::before role in members tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before, /* headers in settings */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* headers in settings */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before, /* headers in settings */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* headers in settings */
 {
     content:"";
     display: flex;
@@ -296,17 +294,17 @@ code.inline, /* quotes and other markups */
     top: 6.5px;
 }
 
-[class^="membersWrap-"] [class^="membersGroup-"] > span::before, /* ::before role in members tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::before, /* ::before role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
 {
     background: linear-gradient(to left, var(--main) 50%, transparent);
     margin-right: 5px;
 }
 
-[class^="membersWrap-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
+[class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories*/
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
 {
     background-image: linear-gradient(to right, var(--main) 50%, transparent);
     margin-left: 5px;
@@ -334,6 +332,11 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 [class^="folderIconWrapper-"] /* normal folder icon */
 {
     background: var(--background-color-2) !important;
+}
+
+[class^="expandedFolderIconWrapper"] > svg
+{
+    color: var(--main) !important;
 }
 
 [class*="unreadMentionsBar"], /* unread mentions bar*/
@@ -377,6 +380,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 [class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="avatar-"] /* avatar in user profile*/
 {
     left:240px;
+    border-color: transparent;
 }
 
 [class^="userPopout-"], /* user popout */
@@ -394,11 +398,6 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 [class^="focusLock-"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
 {
     border-radius: var(--bars-border-radius);
-}
-
-[class^="focusLock-"] [class*="avatar"]
-{
-    border-color: transparent;
 }
 
 [class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
@@ -441,7 +440,14 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 
 [class^="replyBar"] /* reply bar */
 {
-    background: var(--background-floating)
+    background: var(--background-floating);
+    border-radius: 0px !important;
+}
+
+[class^="uploadModal-"] [class^="replyBar"] /* reply bar in upload modal*/
+{
+    position: relative;
+    bottom:3px;
 }
 
 [class*="mention "][class*="wrapper"] /* mentions */
@@ -490,28 +496,28 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background-image: none;
 }
 
-[class^="actionButtons-"] * /* video and screen buttons */
+[class^="actionButtons-"] > * /* video and screen buttons */
 {
     font-size: 0px;
 }
 
-section[class^="panels-"] > [class^="container-"] > [class^="flex-"], /* mute, deafen, settings buttons' parent*/
-section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child /* parent of krisp and leave buttons */
+[class^="actionButtons-"] > *:hover /* video and screen buttons on hover */
 {
-    background: var(--background-floating);
+    border:var(--hover-button-border);
+    padding-left: 14.5px;
+    padding-right: 14.5px;
 }
 
-section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button, /* mute, deafen, settings buttons */
-section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button  /* krisp and leave buttons */
+section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button:hover, /* mute, deafen, settings buttons on hover*/
+section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button:hover /* krisp and leave buttons */
 {
-    opacity: var(--button-opacity);
+    background:var(--background-secondary) !important;
 }
 
 section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button:hover, /* mute, deafen, settings buttons on hover*/
 section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button:hover /* krisp and leave buttons */
 {
     border: var(--hover-button-border);
-    opacity: var(--hover-button-opacity);
 }
 
 [class^="actionButtons-"] [class^="buttonIcon"] /* icons of video and screen buttons */
@@ -524,7 +530,7 @@ section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-
     background: var(--main);
 }
 
-[class^="pointerEvents-"]:not([mask*="mobile"]) /* pointer events */
+[class^="pointerEvents-"]:not([mask*="mobile"])
 {
     mask: url(#svg-mask-status-online);
 }
@@ -546,6 +552,11 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"][class*="selected-"]
+{
+    background:var(--selected-channel-color);
 }
 
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab*/
@@ -725,7 +736,7 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background: var(--background-primary) !important;
 }
 
-div[class^="attachment"]
+div[class^="attachment"] /* attachment in chat*/
 {
     background:var(--background-floating);
 }
