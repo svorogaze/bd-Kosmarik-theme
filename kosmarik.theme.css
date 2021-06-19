@@ -12,6 +12,8 @@
 {
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
+    --background-chat:rgba(40, 41, 45, 0.6);
+    --background-sides:rgba(40, 41, 45, 0.8);
     --button-background-hover:rgb(78, 78, 87);
     --selected-channel-color:rgb(37, 130, 173);
     --mention-color: rgb(30, 130, 197);
@@ -20,12 +22,11 @@
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
-    --home-icon: url(https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif);
+    --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
+    --background-image: url('https://imgur.com/wIGIIZs.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
-    --button-opacity: 0.5;
-    --hover-button-opacity: 1;
     --hover-button-border: 1.5px solid var(--main);
 }
 
@@ -101,7 +102,6 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
 {
     animation: 3s rainbow_shadow linear infinite;
     background: var( --selected-channel-color);
-    margin-bottom: 2.5px;
 }
 
 [class^="unread-"], /* unread mark around channel */
@@ -150,7 +150,8 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     display:block;
 }
 
-[class*="profileBadge18"]  /* profile badges */
+[class*="profileBadge18"],  /* profile badges */
+[class^="aboutMeSection-"] [class^="betaBadge-"] /* beta badge in about me section*/
 {
     display: none;
 }
@@ -176,6 +177,12 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
 [class*="scrollableContainer-"][class*="webkit-"] /* input in chat */
 {
     background: var(--background-color-2);
+}
+
+form[class^="form-"] > div [class^="clipContainer-"]
+{
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 [class^="newMessagesBar"] /* new messages bar */
@@ -205,6 +212,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
 
 :not([class*="focused"])[class*="search-"] > [class^="searchBar-"] /* search bar */
 {
+    background: transparent;
     width: 16px;
     transition: 1s;
 }
@@ -212,7 +220,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
 :not([class*="focused"])[class*="search-"] > [class^="searchBar-"]:hover, /* :hover search bar */
 :not([class*="focused"])[class*="search-"][class*="open"] > [class^="searchBar-"] /* open search bar */
 {
-    background: var(--background-color-2);
+    background: var(--background-floating);
     width: 240px;
 }
 
@@ -496,12 +504,12 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background-image: none;
 }
 
-[class^="actionButtons-"] > * /* video and screen buttons */
+[class^="actionButtons-"] > button /* video and screen buttons */
 {
     font-size: 0px;
 }
 
-[class^="actionButtons-"] > *:hover /* video and screen buttons on hover */
+[class^="actionButtons-"] > button:hover /* video and screen buttons on hover */
 {
     border:var(--hover-button-border);
     padding-left: 14.5px;
@@ -739,4 +747,54 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 div[class^="attachment"] /* attachment in chat*/
 {
     background:var(--background-floating);
+}
+
+#app-mount /* adding bg*/
+{
+    background: var(--background-image) center/cover no-repeat;
+}
+
+[class^="privateChannels"] > [class^="scroller-"],
+#app-mount > [class^="app-"] > [class^="app"],
+#app-mount > [class^="app-"] > [class^="app"] > [class^="bg-"], 
+body,
+[class^="membersWrap"] > [class*="members"] > [class^="content-"],
+[class^="layers-"] [class*="guilds"],
+[class^="base-"] [class^="sidebar-"] > [class^="container-"],
+[class^="sidebar-"] section[class^="panels-"],
+[class^="content-"] > [class^="chat-"] > [class^="uploadArea"],
+[class^="privateChannels"],
+[class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] > *,
+[class^="nowPlayingColumn-"],
+[class^="nowPlayingColumn-"]
+{
+    background: transparent !important;
+}
+
+[class*="withFrame-"] /* top of the window*/
+{
+    background:var(--background-sides);
+    margin-top:0px;
+    padding-top: 4px;
+}
+
+
+[class^="chat-"] > section[class*="container"][class^="title-"], /* channel header */
+[class^="layers-"] [class*="guilds"] [class^="scroller-"], /* server list*/
+[class^="base-"] > [class^="content-"] > [class^="sidebar-"],
+[class^="searchResultsWrap-"], /* wrap of search results*/
+[class^="membersWrap-"] > [class^="members-"], /* members tab*/
+[class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] /* online tab in dm*/
+{
+    background: var(--background-sides) !important;
+}
+
+[class^="content-"] > [class^="chat-"] /* chat */
+{
+    background: var(--background-chat) !important;
+}
+
+[class^="chat-"] > section[class*="container"][class^="title-"] [class*="children"]::after /* ::after children of channel header*/
+{
+    display:none;
 }
