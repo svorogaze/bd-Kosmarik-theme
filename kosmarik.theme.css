@@ -766,7 +766,7 @@ body,
 [class^="privateChannels"],
 [class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] > *,
 [class^="nowPlayingColumn-"],
-[class^="nowPlayingColumn-"]
+[class^="nowPlayingColumn-"] *
 {
     background: transparent !important;
 }
