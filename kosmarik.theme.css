@@ -28,6 +28,7 @@
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
     --hover-button-border: 1.5px solid var(--main);
+    --font-display:var(--font-primary);
 }
 
 .theme-dark,
@@ -66,7 +67,7 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 }
 
 [class^="buttons-"] > button[class*="lookBlank-"][class*="grow-"] > div:not([class*="translateButton-"]), /* send a nitro button */
-[class^="buttons-"] > div[class^="buttonContainer"] > button:not([class^="emojiButton"])[class*="lookBlank-"][class*="grow-"] /* send a gif button */
+[class^="buttons-"] > div[class^="buttonContainer"]:not([class*='send-button']) > button:not([class^="emojiButton"])[class*="lookBlank-"][class*="grow-"] /* send a gif button */
 {
     display: none;
 }
@@ -95,6 +96,11 @@ div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 [class*="modeConnected"] * [class*="channelName"] /* joined voice channel */
 {
     color: var(--main);
+}
+
+[class*="modeUnread"] svg[class^="icon-"] /* hashtag icon before unread channel names*/
+{
+    filter:drop-shadow(0 0 3px);
 }
 
 [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
@@ -176,10 +182,10 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
 
 [class*="scrollableContainer-"][class*="webkit-"] /* input in chat */
 {
-    background: var(--background-color-2);
+    background: var(--background-sides);
 }
 
-form[class^="form-"] > div [class^="clipContainer-"]
+form[class^="form-"] > div [class^="clipContainer-"] /* reply bar */
 {
     margin-top: 0px;
     padding-top: 0px;
@@ -226,7 +232,7 @@ form[class^="form-"] > div [class^="clipContainer-"]
 
 ::-webkit-scrollbar-thumb
 {
-    background-color: var(--scrollbar-thin-thumb) !important; 
+    background-color: var(--scrollbar-thin-thumb) !important;
 }
 
 ::-webkit-scrollbar-track
@@ -562,9 +568,14 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-size: contain;
 }
 
-[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"][class*="selected-"]
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab */
 {
-    background:var(--selected-channel-color);
+    color:var(--main);
+}
+
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"][class*="selected-"] /* selected tab in settings*/
+{
+    background: var(--selected-channel-color);
 }
 
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab*/
@@ -794,7 +805,13 @@ body,
     background: var(--background-chat) !important;
 }
 
-[class^="chat-"] > section[class*="container"][class^="title-"] [class*="children"]::after /* ::after children of channel header*/
+[class^="container-"] section[class*="container"] [class*="children"]:after, /* ::after children of channel header*/
+form[class^="form-"]::before /* chat input */
 {
     display:none;
+}
+
+[class^="base-"] > [class^="content-"] > [class^="sidebar-"] /* list of channels*/
+{
+    border-top-left-radius: 0px;
 }
