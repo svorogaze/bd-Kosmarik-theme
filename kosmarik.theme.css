@@ -53,7 +53,9 @@
     --text-muted: var(--main); 
     --scrollbar-auto-scrollbar-color-thumb: var(--main);
     --scrollbar-auto-scrollbar-color-track:transparent;
-    --deprecated-text-input-bg: var(--background-color-2);
+    --deprecated-text-input-bg: var(--background-color-1);
+    --deprecated-text-input-border:none;
+    --deprecated-text-input-border-hover: 0px solid transparent;
 }
 
 [class*="homeIcon"]
@@ -156,7 +158,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     display:block;
 }
 
-[class*="profileBadge18"],  /* profile badges */
+
 [class^="aboutMeSection-"] [class^="betaBadge-"] /* beta badge in about me section*/
 {
     display: none;
@@ -386,6 +388,22 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     justify-content: flex-end;
 }
 
+[class^="userPopout"] [class*="profileBadges"]  /* user popout badges */
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width:105px;
+    right:5px;
+    top:0px;
+}
+
+[class^="userPopout"] [class*="profileBadges"] [class^="profileBadge"] /* badges in user popout*/
+{
+    width:18px;
+    height:18px;
+}
+
 [class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class*="badgeList-"] [class*="profileBadgePremium-"] /* nitro badge in user profile*/
 {
     width: 22px;
@@ -454,7 +472,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 
 [class^="replyBar"] /* reply bar */
 {
-    background: var(--background-floating);
+    background: var(--background-sides);
     border-radius: 0px !important;
 }
 
@@ -752,7 +770,7 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 
 [class^="pageWrapper-"] /* explore public servers page*/
 {
-    background: var(--background-primary) !important;
+    background: var( --background-sides) !important;
 }
 
 div[class^="attachment"] /* attachment in chat*/
@@ -777,7 +795,10 @@ body,
 [class^="privateChannels"],
 [class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] > *,
 [class^="nowPlayingColumn-"],
-[class^="nowPlayingColumn-"] *
+[class^="nowPlayingColumn-"] *,
+[class^="layers-"] > [class^="layer-"],
+[class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > *,
+[class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"]
 {
     background: transparent !important;
 }
@@ -795,7 +816,8 @@ body,
 [class^="base-"] > [class^="content-"] > [class^="sidebar-"],
 [class^="searchResultsWrap-"], /* wrap of search results*/
 [class^="membersWrap-"] > [class^="members-"], /* members tab*/
-[class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] /* online tab in dm*/
+[class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"], /* online tab in dm*/
+[class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] /* settings*/
 {
     background: var(--background-sides) !important;
 }
@@ -814,4 +836,26 @@ form[class^="form-"]::before /* chat input */
 [class^="base-"] > [class^="content-"] > [class^="sidebar-"] /* list of channels*/
 {
     border-top-left-radius: 0px;
+}
+
+#MemberCount /* member count in member count plugin */
+{
+    background:var(--background-sides) !important;
+    margin-top: 0px !important;
+    z-index: 0 !important;
+}
+
+#MemberCount span /* members count span in members count plugin*/
+{
+    width:208px;
+}
+
+[class^="membersWrap-"] > div[class*="members-"]:not(:first-child) /* members tab if members count plugin is enabled*/
+{
+    margin-top:40px;
+}
+
+#bd-pub-button /* bd 'public servers' button*/
+{
+    background-color: var(--background-floating);
 }
