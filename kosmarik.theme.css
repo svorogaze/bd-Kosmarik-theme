@@ -3,6 +3,7 @@
  * @author svorogaze
  * @version 0.2
  * @description Simple dark theme 
+ * @source https://github.com/svorogaze/bd-Kosmarik-theme
  */
 
 @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
@@ -17,6 +18,7 @@
     --button-background-hover:rgb(78, 78, 87);
     --selected-channel-color:rgb(37, 130, 173);
     --mention-color: rgb(30, 130, 197);
+    --mention-background:rgba(31, 29, 29, 0.7);
     --main:  #34dbd3;
     --close-window-button-color:#ff605c;
     --max-window-button-color:#00ca4e;
@@ -35,10 +37,10 @@
 .theme-light
 {
     /*discord vars */
-   --background-floating: var(--background-color-2); /* color of floating background */
+   --background-floating: var(--background-color-2);
    --background-secondary: var(--background-color-1);
-   --background-tertiary: var(--background-color-1); /* color of servers tab*/
-   --background-modifier-accent:#414040fd; /* color of dividers */
+   --background-tertiary: var(--background-color-1);
+   --background-modifier-accent:#414040fd;
    --background-modifier-selected: var(--background-color-2);
    --background-modifier-active: var(--background-color-2);
    --background-secondary-alt: var(--background-color-1);
@@ -47,7 +49,8 @@
    --brand-experiment-560:var(--button-background-hover) !important;
    --brand-experiment-600: var(--button-background-hover) !important;
    --brand-experiment: var(--background-floating) !important;
-
+   --background-mentioned:var(--mention-background);
+   --background-mentioned-hover:var(--mention-background);
     --scrollbar-thin-thumb: var(--main);
     --scrollbar-thin-track: transparent;
     --text-muted: var(--main); 
@@ -58,7 +61,21 @@
     --deprecated-text-input-border-hover: 0px solid transparent;
 }
 
-[class*="homeIcon"]
+.theme-light
+{
+    --text-normal:#dcddde;
+    --brand-experiment-530:rgb(222, 224, 252) !important;
+    --interactive-active:rgb(255, 255, 255);
+    --header-primary:white;
+    --interactive-active:white;
+    --interactive-normal:#b9bbbe;
+    --interactive-muted:#4f545c;
+    --channels-default:#8e9297;
+    --header-secondary:#b9bbbe;
+    --interactive-hover:#dcddde;
+}
+
+[class*="homeIcon"] /* home icon */
 {
     display:none;
 }
@@ -129,7 +146,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     left:105px;
 }
 
-[class*="userPopout-"] [class^="role-"] /* mobile style roles in user popout*/
+.theme-dark [class*="userPopout-"] [class^="role-"] /* mobile style roles in user popout*/
 {
     background: var(--background-color-1);
     border-radius: 0px;
@@ -249,10 +266,20 @@ form[class^="form-"] > div [class^="clipContainer-"] /* reply bar */
 
 [class*="scrollbar-"][class*="hljs"], /* code block */
 [class*="grid"], /* all embeds*/
-code.inline, /* quotes and other markups */
-[class^="reaction-"] /* reactions */
+code.inline /* quotes and other markups */
 {
     background: var(--background-floating);
+}
+
+
+[class^="reactions-"] > div > [class^="reaction-"] /* reaction */
+{
+    background: var(--background-color-2) !important;
+}
+
+[class^="reactions-"] > div > [class^="reaction-"][class*="reactionMe-"] /* reacted reaction */
+{
+    background: var(--background-color-1) !important;
 }
 
 [class*="scrollbar-"][class*="hljs"] /* code block */
@@ -334,6 +361,7 @@ code.inline, /* quotes and other markups */
 div[class^="inner-"] > div[class^="uploadModal-"] > * /* children of 'upload picture in chat' popout*/
 {
     background: var(--background-floating);
+    box-shadow: none;
 }
 
 div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a comment' child of 'upload picture in chat' popout*/
@@ -350,7 +378,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background: var(--background-color-2) !important;
 }
 
-[class^="expandedFolderIconWrapper"] > svg
+[class^="expandedFolderIconWrapper"] > svg /* svg of expanded folder icon*/
 {
     color: var(--main) !important;
 }
@@ -384,8 +412,9 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     width:230px;
     flex-wrap: wrap;
     position: relative;
-    right:135px;
+    right: 140px;
     justify-content: flex-end;
+    top:2px;
 }
 
 [class^="userPopout"] [class*="profileBadges"]  /* user popout badges */
@@ -394,7 +423,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     flex-wrap: wrap;
     justify-content: flex-start;
     width:105px;
-    right:5px;
+    right:0px;
     top:0px;
 }
 
@@ -413,6 +442,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 {
     left:240px;
     border-color: transparent;
+    top:-50px;
 }
 
 [class^="userPopout-"], /* user popout */
@@ -432,6 +462,18 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     border-radius: var(--bars-border-radius);
 }
 
+[class^="focusLock-"] [class^="relationshipButtons"] /* send a friend request and one other buttons in user profile */
+{
+    left:20px !important;
+    position: relative;
+}
+
+[class^="focusLock-"] [class^="relationshipButtons"] [class^="additionalActionsIcon"] /* additional action button in user profile */
+{
+    position: relative;
+    right:5px;
+}
+
 [class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
 {
     fill: var(--text-normal);
@@ -443,7 +485,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 }
 
 [class*="divider"][class*="hasContent-"] > [class^="content-"], /* date divider */
-[class*="divider"][class*="hasContent-"]
+[class*="divider"][class*="hasContent-"] /* content of date divider */
 {
     color: var(--main);
     border: 1px solid var(--main);
@@ -562,7 +604,7 @@ section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-
     background: var(--main);
 }
 
-[class^="pointerEvents-"]:not([mask*="mobile"])
+[class^="pointerEvents-"]:not([mask*="mobile"]) /* status dots */
 {
     mask: url(#svg-mask-status-online);
 }
@@ -575,8 +617,7 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
 {
     position: relative;
-    bottom: 2px;
-    display: flex;
+    bottom: -6.5px !important;
     content: '';
     height: 24px;
     width: 24px;
@@ -584,24 +625,37 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    flex-shrink: 0;
+    display: inline-block;
 }
 
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab */
+[class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
 {
     color:var(--main);
 }
 
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
+{
+    color: var(--main);
+    display: inline-block;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom:10px
+}
+
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"] > [class^="flex-"]  /*nitro tab name in settings tab */
+{
+    color: var(--main);
+    display: inline-block;
+    margin: 0px;
+}
+
 [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"][class*="selected-"] /* selected tab in settings*/
 {
-    background: var(--selected-channel-color);
+    background: var(--selected-channel-color) !important;
 }
 
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"]) /* tab names in settings tab*/
-{
-    display:flex;
-}
-
-[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]
+[class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"] /* header in settings*/
 {
     padding-top:0px;
 }
@@ -713,12 +767,12 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/overlay.png');
 }
 
-[aria-controls="Settings-tab" i]::before /* bd Settings */
+[class="bd-sidebar-header"] + div::before /* bd Settings */
 {
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/bd-settings.png');
 }
 
-[aria-controls="Emotes-tab" i]::before /* bd Emotes */
+[class="bd-sidebar-header"] + div + div::before /* bd Emotes */
 {
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/emotes.png');
 }
@@ -739,6 +793,11 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 }
 
 [aria-controls="themerepo-tab" i]::before /* bd Theme Repo */
+{
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/theme-repo.png');
+}
+
+[aria-controls="pluginrepo-tab" i]::before /* bd plugin Repo */
 {
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/theme-repo.png');
 }
@@ -810,7 +869,6 @@ body,
     padding-top: 4px;
 }
 
-
 [class^="chat-"] > section[class*="container"][class^="title-"], /* channel header */
 [class^="layers-"] [class*="guilds"] [class^="scroller-"], /* server list*/
 [class^="base-"] > [class^="content-"] > [class^="sidebar-"],
@@ -858,4 +916,74 @@ form[class^="form-"]::before /* chat input */
 #bd-pub-button /* bd 'public servers' button*/
 {
     background-color: var(--background-floating);
+}
+
+[class^="message-"][class*="mentioned-"]::before /* ::before message with mention*/
+{
+    background-color: var(--mention-background);
+}
+
+[class^="userLimit-"] [class^="total-"]::before /* ::before second number in user limit*/
+{
+    font-family: 'Whitney';
+    font-size:12px;
+    content:"/";
+    z-index:1;
+    position:absolute;
+    right:20px;
+}
+
+[class^="jumpToPresentBar-"] /* jump to present bar */
+{
+    background:var(--background-sides);
+}
+
+.theme-light [class^="root-"], /* add a server popout*/
+.theme-light [class^="root-"] [class^="flex-"] /* child of add a server popout*/
+{
+    background:var(--background-floating);
+    box-shadow:none;
+}
+
+[name="LockClosed"] /* lock after hidden channel name in ShowHiddenChannels plugin*/
+{
+    color:var(--main);
+}
+
+#fdButton:hover /* fake deafen button in fake deafen plugin*/
+{
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+}
+
+[class^="GoogleTranslateOption-modal"] /* Google Translate popout in Google Translate Option plugin*/
+{
+    background-color: var(--background-floating) !important;
+}
+
+[class*="creationDate-"] /* Creation date in user popout in Creation Date plugin*/
+{
+    display:block;
+    text-align: center;
+}
+
+#user-context [class^="barFill-"] /* fill of user volume bar */
+{
+    background-color:var(--main);
+}
+
+#permissions-popout [class="member-perms-title"] /* permissions title in PermissionsViewer plugin*/
+{
+    position: relative;
+    left:92.3595px;
+}
+
+[class*="joinedAtDate-"] /* joined at date  in JoinedAtDate plugin*/
+{
+    display:block;
+    text-align: center;
+}
+[class*="typingindicator-channel"] [class^="pulsingEllipsis"] /* typing indicator near channel in TypingIndicator plugin */
+{
+    background-color:var(--main) !important;
 }
