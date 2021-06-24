@@ -1,5 +1,5 @@
 # Kosmarik theme for better discord
-Just small better discord theme i made for myself
+Betterdiscord dark theme
 
 Code has [Unlicense license](https://unlicense.org/)
 
