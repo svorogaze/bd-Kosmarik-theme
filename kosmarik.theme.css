@@ -1,12 +1,11 @@
 /**
  * @name Kosmarik
  * @author svorogaze
+ * @authorLink https://github.com/svorogaze
  * @version 0.2
  * @description Simple dark theme 
  * @source https://github.com/svorogaze/bd-Kosmarik-theme
  */
-
-@import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
@@ -20,18 +19,21 @@
     --selected-channel-color:rgb(37, 130, 173);
     --mention-color: rgb(30, 130, 197);
     --mention-background:rgba(12, 181, 187, 0.157);
+    --code-background:var(--background-sides);
     --main:  #34dbd3;
     --close-window-button-color:#ff605c;
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
     --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
-    --background-image: url('https://imgur.com/wIGIIZs.jpg');
+    --background-image: url('https://i2.wp.com/wallpapersmug.com/download/3840x2400/95afc8/dark-night-river-forest-minimal-art.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
     --hover-button-border: 1.5px solid var(--main);
-    --font-display:var(--font-primary);
+    --reaction:rgb(61, 61, 66);
+    --reacted-reaction:rgb(42, 43, 47);
+    --background-folders:rgb(47, 47, 53);
 }
 
 .theme-dark,
@@ -60,6 +62,7 @@
     --deprecated-text-input-bg: var(--background-color-1);
     --deprecated-text-input-border:none;
     --deprecated-text-input-border-hover: 0px solid transparent;
+    --font-display:var(--font-primary) !important;
 }
 
 .theme-light
@@ -84,22 +87,6 @@
 div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
 {
     background: var(--home-icon) center/contain no-repeat;
-}
-
-[class^="buttons-"] > button[class*="lookBlank-"][class*="grow-"] > div:not([class*="translateButton-"]), /* send a nitro button */
-[class^="buttons-"] > div[class^="buttonContainer"]:not([class*='send-button']) > button:not([class^="emojiButton"])[class*="lookBlank-"][class*="grow-"] /* send a gif button */
-{
-    display: none;
-}
-
-[href="https://support.discord.com"] /* support button */
-{
-    display:none;
-}
-
-#private-channels [href="/discovery"] /* stage discovery */
-{
-    display: none;
 }
 
 [class*="channelName"], /* all channels names */
@@ -147,14 +134,25 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     left:105px;
 }
 
-[class*="userPopout-"] [class^="role-"] /* mobile style roles in user popout*/
+[class^="role-"] /* roles in user popout*/
 {
-    background: var(--background-color-1);
-    border-radius: 0px;
+    border-radius: 0;
     border: none;
+    position: relative;
+    z-index: 0;
 }
 
-
+[class^="roleCircle-"]::after /* ::after role circle */
+{
+    content: "";
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity:0.25;
+}
 
 [class^="userPopout-"] [class*="popoutBanner"], /* top banner in user popout */
 [class*="profileBanner"] /*  banner in user profile */
@@ -252,9 +250,16 @@ form[class^="form-"] > div [class^="clipContainer-"] /* reply bar */
     width: 240px;
 }
 
+::-webkit-scrollbar
+{
+    width:14px !important;
+}
+
 ::-webkit-scrollbar-thumb
 {
     background-color: var(--scrollbar-thin-thumb) !important;
+    border: 5px solid transparent !important;
+    border-radius: 8px !important;
 }
 
 ::-webkit-scrollbar-track
@@ -267,27 +272,29 @@ form[class^="form-"] > div [class^="clipContainer-"] /* reply bar */
     filter: none;
 }
 
-[class*="scrollbar-"][class*="hljs"], /* code block */
+[class*="scrollbar-"][class*="hljs"], /* small code block */
+[class^="messageAttachment-"] > [class^="embedWrapper-"] > [class^="textContainer-"], /* code block on expanded attached file*/
 [class*="grid"], /* all embeds*/
 code.inline /* quotes and other markups */
 {
-    background: var(--background-floating);
-}
-
-
-[class^="reactions-"] > div > [class^="reaction-"] /* reaction */
-{
-    background: var(--background-color-2) !important;
-}
-
-[class^="reactions-"] > div > [class^="reaction-"][class*="reactionMe-"] /* reacted reaction */
-{
-    background: var(--background-color-1) !important;
+    background: var(--code-background) !important;
 }
 
 [class*="scrollbar-"][class*="hljs"] /* code block */
 {
     border: 1px solid var(--code-border);
+}
+
+[class^="reactions-"] > div > [class^="reaction-"] /* reaction */
+{
+    background: var(--reaction) !important;
+    border:none;
+}
+
+[class^="reactions-"] > div > [class^="reaction-"][class*="reactionMe-"] /* reacted reaction */
+{
+    background: var(--reacted-reaction) !important;
+    border:none;
 }
 
 [class*="wordmark-"] > svg /* 'DISCORD' sign on top of the window */
@@ -344,7 +351,7 @@ code.inline /* quotes and other markups */
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
 [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
 {
-    background: linear-gradient(to left, var(--main) 50%, transparent);
+    background: linear-gradient(to left, var(--main) 25%, transparent);
     margin-right: 5px;
 }
 
@@ -352,7 +359,7 @@ code.inline /* quotes and other markups */
 [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories*/
 [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
 {
-    background-image: linear-gradient(to right, var(--main) 50%, transparent);
+    background-image: linear-gradient(to right, var(--main) 25%, transparent);
     margin-left: 5px;
 }
 
@@ -373,10 +380,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 }
 
 [class^="actionButtons-"]  > button[class*="buttonColor"][class*="lookFilled"]:not([class*="Active"]), /* video and screen buttons*/
-[class^="actionButtons-"]  > span[class^="disabledButtonWrapper-"], /* disabled video and screen buttons*/
-[class^="expandedFolderBackground"], /* expanded folder background */
-[class^="expandedFolderIconWrapper"], /* expanded folder icon */
-[class^="folderIconWrapper-"] /* normal folder icon */
+[class^="actionButtons-"]  > span[class^="disabledButtonWrapper-"] /* disabled video and screen buttons*/
 {
     background: var(--background-color-2) !important;
 }
@@ -385,29 +389,31 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 {
     color: var(--main) !important;
 }
-[class*="unreadMentionsBar"], /* unread mentions bar */
-[class^="setIdentityLink-"] /* set a server nickname in your user popout*/
+
+[class^="expandedFolderBackground"], /* expanded folder background */
+[class^="expandedFolderIconWrapper"], /* expanded folder icon */
+[class^="folderIconWrapper-"] /* normal folder icon */
 {
-    display: none;
+    background-color: var(--background-folders) !important;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="nameTag"] /* username in profile*/
+[class^="focusLock-"] > [class^="root-"] [class^="nameTag"] /* username in profile*/
 {
     text-align: center;
     display:block;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="nameTag"] > *:not([class*="bot" i]) /* children of username in profile*/
+[class^="focusLock-"] > [class^="root-"] [class^="nameTag"] > *:not([class*="bot" i]) /* children of username in profile*/
 {
     display:inline;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="botTag-"] /* bot tag in user profile*/
+[class^="focusLock-"] > [class^="root-"] [class^="botTag-"] /* bot tag in user profile*/
 {
     top:3px;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class*="badgeList-"] /* badge list in user profile*/
+[class^="focusLock-"] > [class^="root-"] [class*="badgeList-"] /* badge list in user profile*/
 {
     margin:0px;
     display: flex;
@@ -435,20 +441,19 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     height:18px;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class*="badgeList-"] [class*="profileBadgePremium-"] /* nitro badge in user profile*/
+[class^="focusLock-"] > [class^="root-"] [class*="badgeList-"] [class*="profileBadgePremium-"] /* nitro badge in user profile*/
 {
     width: 22px;
 }
 
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) [class^="avatar-"] /* avatar in user profile*/
+[class^="focusLock-"] > [class^="root-"] [class^="avatar-"] /* avatar in user profile*/
 {
     left:240px;
     border-color: transparent;
     top:-60px;
 }
 
-[class^="userPopout-"], /* user popout */
-[class^="focusLock-"] > [class^="root-"][data-user-id]:not([data-user-id=""]) /* user profile popout */
+[class^="userPopout-"] /* user popout */
 {
     border-radius: var( --popouts-border-radius) !important;
 }
@@ -483,7 +488,7 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 
 [class^="chat-"] [class^="toolbar-"] > * /* tool icons in toolbar*/
 {
-    margin-left:2px;
+    margin-right:2px !important;
 }
 
 [class*="divider"][class*="hasContent-"] > [class^="content-"], /* date divider */
@@ -606,17 +611,12 @@ section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-
     background: var(--main);
 }
 
-[class^="pointerEvents-"]:not([mask*="mobile"]) /* status dots */
-{
-    mask: url(#svg-mask-status-online);
-}
-
 [class^="sourceScroller-"] > [class^="flex-"] /* source scroller in screen share popout*/
 {
     background: transparent !important;
 }
 
-[class*="root-"] > form > [class*="flex"] /* chil of root*/
+[class*="root-"] > form > [class*="flex"] /* child of root*/
 {
     background: transparent !important;
     box-shadow: none;
@@ -626,14 +626,6 @@ section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-
 [class*="root-"] [class^="qualitySettingsContainer-"] * /* children of stream quality settings in screen share popout */
 {
     border-color:transparent;
-}
-
-[class*="root-"] h5,
-[class*="root-"] h2
-{
-    display: block !important;
-    text-align: center;
-    width: 100%;
 }
 
 [class^="bar-"] > [class^="barFill-"] /* fill of bars*/ 
@@ -1009,6 +1001,7 @@ form[class^="form-"]::before /* ::before chat input */
     display:block;
     text-align: center;
 }
+
 [class*="typingindicator-channel"] [class^="pulsingEllipsis"] /* typing indicator near channel in TypingIndicator plugin */
 {
     background-color:var(--main) !important;
@@ -1024,3 +1017,26 @@ a[href="/channels/@me"] > [class^="friendsOnline"] /* friends online counter in 
     font-size: 10px;
 }
 
+[class*="UserDetails-dates-icons"] > *:first-child /* first child of user details in UserDetails plugin*/
+{
+    margin-right: 5px;
+    margin-left:84px;
+}
+
+[class*="UserDetails-dates-icons"] > *:last-child /* last child of user details in UserDetails plugin*/
+{
+    margin-left: 5px;
+    margin-right:84px;
+}
+
+div[class*="lastMessageDate-"] > div /* last message date in LastMessageDate plugin*/
+{
+    display: block !important;
+    text-align: center;
+}
+
+[class^="channelTabs-favContainer"], /* favorite tabs container in ChannelTabs plugin*/
+[class^="channelTabs-tabContainer"] /* tab container in ChannelTabs plugin*/
+{
+    background-color: var(--background-sides) !important;
+}
