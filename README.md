@@ -12,4 +12,3 @@ Thanks to everyone who has helped.
 [This website](https://icons8.com) for icons
 
 [Luck Fire](https://github.com/LuckFire) (creator of Amoled-Cord theme) for [Roles](https://github.com/LuckFire/amoled-cord/blob/main/src/addons/_filled-roles.scss)
-git pgi

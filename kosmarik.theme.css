@@ -6,6 +6,7 @@
  * @description Simple dark theme 
  * @source https://github.com/svorogaze/bd-Kosmarik-theme
  */
+ @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css"); /* TODO: usrgb's*/
  @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
@@ -689,6 +690,11 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 }
 
 [aria-controls="My Account-tab" i]::before /* My Accout*/
+{
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/account.png');
+}
+
+[aria-controls="Profile Customization-tab" i]::before /* User profile */
 {
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/account.png');
 }
