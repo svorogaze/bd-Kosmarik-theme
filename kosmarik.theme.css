@@ -6,7 +6,7 @@
  * @description Simple dark theme 
  * @source https://github.com/svorogaze/bd-Kosmarik-theme
  */
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
 {
@@ -26,7 +26,7 @@
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
     --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
-    --background-image: url('https://i2.wp.com/wallpapersmug.com/download/3840x2400/95afc8/dark-night-river-forest-minimal-art.jpg');
+    --background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/background.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
@@ -123,14 +123,27 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     background: var(--main);
 }
 
-[class^="userPopout-"] [class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] > [class*="avatar"] /* avatar in user popout */
+[class^="userPopout-"] [class^="avatarWrapperNormal-"] > [class*="avatar"] /* avatar in user popout */
 {
-    border-color:transparent;
+    border:none;
+    left: 6px;
+    top: 6px;
+    background-color: transparent;
 }
 
-[class^="userPopout-"] [class^="avatarWrapperNormal-"][class*="avatarWrapper-"][class*="avatarPosition"] /*  avatar's wrapper and svg in user popout */
+[class^="userPopout-"] [class^="avatar"][class*="premium" i] /* avatar if user has banner in user popout*/
 {
-    top:20px;
+    top: 90px;
+}
+
+[class^="userPopout-"] [class*="popoutBanner-"]:not([class*="premium" i]), /* not user banner in user popout*/
+[class^="focusLock-"] > [class^="root-"] [class*="profileBanner-"]:not([class*="premium" i]) /* not user banner in profile*/
+{
+    visibility: hidden;
+}
+
+[class^="userPopout-"] [class^="avatarWrapperNormal-"] /*  avatar's wrapper and svg in user popout */
+{
     left:105px;
 }
 
@@ -154,15 +167,9 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     opacity:0.25;
 }
 
-[class^="userPopout-"] [class*="popoutBanner"], /* top banner in user popout */
-[class*="profileBanner"] /*  banner in user profile */
+[class^="userPopout-"] [class^="divider"] /* divider in user popout*/
 {
-    visibility:hidden;
-}
-
-[class^="userPopout-"] [class*="popoutBanner"] /* top banner in user popout */
-{
-    height:60px !important;
+    display:none;
 }
 
 [class*="profileBanner"] /*  banner in user profile */
@@ -170,21 +177,15 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     height:75px;
 }
 
-[class^="aboutMeSection"] > [class^="aboutMe"] /* about me section header and body */
+[class^="userPopout-"] [class^="aboutMeSection"] > [class^="aboutMe"] /* about me section header and body */
 {
     text-align:center;
     display:block;
 }
 
-
-[class^="aboutMeSection-"] [class^="betaBadge-"] /* beta badge in about me section*/
+[class^="userPopout-"] [class^="aboutMeSection"] /* about me section in user popout */
 {
-    display: none;
-}
-
-[class*="userPopout"] [class^="headerTop"] /* bottom banner in profile */
-{
-    border-bottom: none;
+    margin-left:5px;
 }
 
 [class^="activityUserPopout-"] > [class^="headerText"] /* activity in user popout, 'playing a game' etc. */
@@ -193,9 +194,10 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     display:block;
 }
 
-[class^="userPopout-"] [class*="userSelectText-"] *, /* nickname and tag in user popout */
+[class^="userPopout-"] [class*="nickname" i], /* nickname and tag in user popout */
 [class^="customStatus-"], /* custom status*/
-[class^="userPopout-"] [class^="bodyTitle-"] /* roles and note in  user popout */
+[class^="userPopout-"] [class^="bodyTitle-"], /* roles and note in  user popout */
+[class^="userPopout-"] [class^="setIdentityLink-"] /* set a server nickname and avatar in your user popout */
 {
     text-align: center;
 }
@@ -265,6 +267,11 @@ form[class^="form-"] > div [class^="clipContainer-"] /* reply bar */
 ::-webkit-scrollbar-track
 {
     background-color: transparent !important; 
+}
+
+[class*="emojiPicker"] > [class*="categoryList-"] > [class*="none"]::-webkit-scrollbar  /* guilds list in emoji picker*/
+{
+	display: none !important;
 }
 
 [class*="emojiItemDisabled-"] /* disabled emojis */
@@ -433,12 +440,13 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     width:105px;
     right:0px;
     top:0px;
+    flex-shrink: 0;
 }
 
 [class^="userPopout"] [class*="profileBadges"] [class^="profileBadge"] /* badges in user popout*/
 {
-    width:18px;
-    height:18px;
+    width: 20px;
+    height: 20px;
 }
 
 [class^="focusLock-"] > [class^="root-"] [class*="badgeList-"] [class*="profileBadgePremium-"] /* nitro badge in user profile*/
@@ -448,14 +456,10 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
 
 [class^="focusLock-"] > [class^="root-"] [class^="avatar-"] /* avatar in user profile*/
 {
-    left:240px;
-    border-color: transparent;
-    top:-60px;
-}
-
-[class^="userPopout-"] /* user popout */
-{
-    border-radius: var( --popouts-border-radius) !important;
+    left:248px;
+    border:none;
+    top:-52px;
+    background:transparent;
 }
 
 [class^="focusLock-"] [class*="activityHeader-"] /* custom status in user profile */
