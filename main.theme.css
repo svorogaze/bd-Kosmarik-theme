@@ -889,7 +889,7 @@
  [class^="customizationSection"][class*="preview-"] [class^="avatarUploader"]:not([class*="banner" i]):not([class*="hint" i]) /* avatar in customization tab */
  {
     top:45px;
-    left:60px;
+    left:55px;
     border:none;
  }
  
@@ -908,7 +908,6 @@
  {
      display: block;
      text-align: center;
-     margin-left: 5px;
  }
  
  [class^="customizationSection"][class*="preview-"] [class^="fakeActivityTitle-"] /* activity title in customization tab*/
