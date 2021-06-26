@@ -2,7 +2,10 @@
 Dark theme for better discord
 
 Code has [Unlicense license](https://unlicense.org/)
+# Screenshots
+![General looking](https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/a29fd1ae120977f2cd3097b3597951cf1c3de604/screenshots/general.PNG)
 
+![Settings](https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/a29fd1ae120977f2cd3097b3597951cf1c3de604/screenshots/settings.PNG)
 # Issue Reporting
 Report issues in [theme repo](https://github.com/svorogaze/bd-Kosmarik-theme)
 
