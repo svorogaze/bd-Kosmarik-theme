@@ -6,6 +6,9 @@ Code has [Unlicense license](https://unlicense.org/)
 ![General looking](https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/a29fd1ae120977f2cd3097b3597951cf1c3de604/screenshots/general.PNG)
 
 ![Settings](https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/a29fd1ae120977f2cd3097b3597951cf1c3de604/screenshots/settings.PNG)
+# Installation
+To install a theme, dowloand kosmarik.theme.css(not main.theme.css) and put it into themes folder
+
 # Issue Reporting
 Report issues in [theme repo](https://github.com/svorogaze/bd-Kosmarik-theme)
 
