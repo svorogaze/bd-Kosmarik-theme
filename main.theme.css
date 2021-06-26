@@ -689,7 +689,7 @@
      color:var(--main);
  }
  
- [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
+ [class^="layer"] > [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
  {
      color: var(--main);
      display: inline-block;
