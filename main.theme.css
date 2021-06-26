@@ -7,8 +7,8 @@
  * @source https://github.com/svorogaze/bd-Kosmarik-theme
  * @authorId 367727766944088064
  */
- @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
- @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
  
   :root
  {
@@ -27,8 +27,8 @@
      --max-window-button-color:#00ca4e;
      --hide-window-button-color:#ffbd44;
      --code-border: var(--main);
-     --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
-     --background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/background.jpg');
+     --home-icon: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/home-icon.gif');
+     --background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/background.jpg');
      --popouts-border-radius: 40px;
      --bars-border-radius: 20px;
      --window-buttons-border-radius: 8px;
@@ -712,191 +712,191 @@
  
  [aria-controls="My Account-tab" i]::before /* My Accout*/
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/account.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/account.png');
  }
  
  [aria-controls="Profile Customization-tab" i]::before /* User profile */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/profile.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/profile.png');
  }
  
  [aria-controls="Privacy & Safety-tab" i]::before /* Privacy & Safety */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/privacy.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/privacy.png');
  }
  
  [aria-controls="Authorized Apps-tab" i]::before /* Authorized Apps */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/apps.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/apps.png');
  }
  
  [aria-controls="Connections-tab" i]::before /* Connections */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/connections.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/connections.png');
  }
  
  [aria-controls="Discord Nitro-tab" i]::before /* Subscriptions */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/nitro.png');
-     left: -2.5px !important;
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/nitro.png');
+    left: -2.5px !important;
  }
  
  [aria-controls="Nitro Server Boost-tab" i]::before /* Server Boost */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/boost.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/boost.png');
  }
  
  [aria-controls="Library Inventory-tab" i]::before /* Gift Inventory */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/gift.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/gift.png');
  }
  
  [aria-controls="Billing-tab" i]::before /* Billing */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/billing.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/billing.png');
  }
  
  [aria-controls="Appearance-tab" i]::before /* Appearance */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/appearance.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/appearance.png');
  }
  
  [aria-controls="Accessibility-tab" i]::before /* Accessibility */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/accessibility.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/accessibility.png');
  }
  
  [aria-controls="Voice & Video-tab" i]::before /* Voice And Video */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/mic.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/mic.png');
  }
  
  [aria-controls="Text & Images-tab" i]::before /* Text and images */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/text.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/text.png');
  }
  
  [aria-controls="Notifications-tab" i]::before /* Notifications */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/notifications.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/notifications.png');
  }
  
  [aria-controls="Keybinds-tab" i]::before /* Keybinds */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/keybinds.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/keybinds.png');
  }
  
  [aria-controls="Language-tab" i]::before /* Language */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/language.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/language.png');
  }
  
  [aria-controls="Windows-tab" i]::before /* Windows settings */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/windows.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/windows.png');
  }
  
  [aria-controls="Linux-tab" i]::before /* Linux settings */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/linux.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/linux.png');
  }
  
  [aria-controls="Streamer Mode-tab" i]::before /*Streamer Mode */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/streamer.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/streamer.png');
  }
  
  [aria-controls="Advanced-tab" i]::before /* Advanced */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/advanced.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/advanced.png');
  }
  
  [aria-controls="Game Activity-tab" i]::before /* Activity Status */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/activity.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/activity.png');
  }
  
  [aria-controls="Overlay-tab" i]::before /* Game Overlay */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/overlay.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/overlay.png');
  }
  
  [class="bd-sidebar-header"] + div::before /* bd Settings */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/bd-settings.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/bd-settings.png');
  }
  
  [class="bd-sidebar-header"] + div + div::before /* bd Emotes */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/emotes.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/emotes.png');
  }
  
  [aria-controls="customcss-tab" i]::before /* bd custom css */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/css.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/css.png');
  }
  
  [aria-controls="plugins-tab" i]::before /* bd plugins */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/plugin.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/plugin.png');
  }
  
  [aria-controls="themes-tab" i]::before /* bd themes */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/palette.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/palette.png');
  }
  
  [aria-controls="themerepo-tab" i]::before /* bd Theme Repo */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/theme-repo.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/theme-repo.png');
  }
  
  [aria-controls="pluginrepo-tab" i]::before /* bd plugin Repo */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/theme-repo.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/theme-repo.png');
  }
  
  [aria-controls="changelog-tab" i]::before /* change log */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/changelog.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/changelog.png');
  }
  
  [aria-controls="Hypesquad Online-tab" i]::before /* HypeSquad */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/squad.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/squad.png');
  }
  
  [aria-controls="Experiments-tab" i]::before /* Experiments */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/experiment.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/experiment.png');
  }
  
  [aria-controls="Developer Options-tab" i]::before /* Developer Options */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/dev-options.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/dev-options.png');
  }
  
  [aria-controls="logout-tab" i]::before /* Log Out */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/logout.png');
+    background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/logout.png');
  }
  
  [class^="customizationSection"][class*="preview-"] [class^="avatarUploader"]:not([class*="banner" i]):not([class*="hint" i]) /* avatar in customization tab */
  {
-     top:45px;
-     left:60px;
-     border:none;
+    top:45px;
+    left:60px;
+    border:none;
  }
  
  [class^="customizationSection"][class*="preview-"] [class^="customStatus-"] /* custom status in customization tab*/
  {
-     display:block;
-     text-align: center;
+    display:block;
+    text-align: center;
  }
  
  [class^="customizationSection"][class*="preview-"] [class^="divider-"] /* divider in customization tab*/
  {
-     display:none;
+   display:none;
  }
  
  [class^="customizationSection"][class*="preview-"] [class^="aboutMeSection"] > * /* children of about me section in customization tab*/
