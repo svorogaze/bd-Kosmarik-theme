@@ -5,9 +5,10 @@
  * @version 0.2
  * @description Simple dark theme 
  * @source https://github.com/svorogaze/bd-Kosmarik-theme
+ * @authorId 367727766944088064
  */
- @import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css"); /* TODO: usrgb's*/
- @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url("https://discord-custom-covers.github.io/usrbg/dist/usrbg.css");
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
  :root
 {
@@ -26,7 +27,7 @@
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
-    --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
+    --home-icon: url('https://imgur.com/D4C5VpD.gif');
     --background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/background.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
@@ -64,6 +65,7 @@
     --deprecated-text-input-border:none;
     --deprecated-text-input-border-hover: 0px solid transparent;
     --font-display:var(--font-primary) !important;
+    --deprecated-store-bg:var(--background-sides);
 }
 
 .theme-light
@@ -80,14 +82,14 @@
     --interactive-hover:#dcddde;
 }
 
-[class*="homeIcon"] /* home icon */
+[class^="homeIcon"] /* home icon */
 {
     display:none;
 }
 
-div[data-list-item-id^="guildsnav___home"] * /* replacing home icon */
+div[data-list-item-id^="guildsnav___home"] > div /* replacing home icon */
 {
-    background: var(--home-icon) center/contain no-repeat;
+    background: var(--home-icon) center/cover no-repeat;
 }
 
 [class*="channelName"], /* all channels names */
@@ -132,15 +134,33 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     background-color: transparent;
 }
 
-[class^="userPopout-"] [class^="avatar"][class*="premium" i] /* avatar if user has banner in user popout*/
+[class^="userPopout-"] [class^="avatarWrapper"][class*="premium" i], /* avatar if user has banner in user popout*/
+[class^="userPopout-"][style*="--user-background"] [class^="avatarWrapper"]:not([class*="premium-" i]) /* avatar if user has usrbg */
 {
     top: 90px;
 }
 
-[class^="userPopout-"] [class*="popoutBanner-"]:not([class*="premium" i]), /* not user banner in user popout*/
-[class^="focusLock-"] > [class^="root-"] [class*="profileBanner-"]:not([class*="premium" i]) /* not user banner in profile*/
+[class^="userPopout-"]:not([style*="--user-background"]) [class*="popoutBanner-"]:not([class*="premium" i]), /*  banner in user popout if user doesn't have usrbg or nitro banner */
+[class^="focusLock-"] > [class^="root-"]:not([style*="--user-background"]) [class*="profileBanner-"]:not([class*="premium" i]) /* banner in user profile if user doesn't have usrbg or nitro banner */
 {
     visibility: hidden;
+}
+
+[class^="root-"]:not([style*="--user-background"]) [class*="profileBanner"]:not([class*="premium" i]) /*  banner in user profile if user doesn't have usrbg or nitro banner*/
+{
+    height:75px;
+}
+
+[class^="userPopout-"][style*="--user-background"] [class*="popoutBanner-"] /* popout banner if user has usrbg*/
+{
+    background:var(--user-background) center/cover no-repeat;
+    height:120px;
+}
+
+[class^="root-"][style*="--user-background"] [class*="profileBanner"] /* profile banner if user has usrbg */
+{
+    background: var(--user-background) center/cover no-repeat;
+    height:240px;
 }
 
 [class^="userPopout-"] [class^="avatarWrapperNormal-"] /*  avatar's wrapper and svg in user popout */
@@ -148,7 +168,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     left:105px;
 }
 
-[class^="role-"] /* roles in user popout*/
+[class^="role-"] /* roles Thanks LuckFire(Creator Of Amodled-cord) for this code*/
 {
     border-radius: 0;
     border: none;
@@ -156,7 +176,7 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     z-index: 0;
 }
 
-[class^="roleCircle-"]::after /* ::after role circle */
+[class^="roleCircle-"]::after /* ::after role circle Thanks LuckFire(Creator Of Amodled-cord) for this code */
 {
     content: "";
     background-color: inherit;
@@ -168,14 +188,9 @@ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][cla
     opacity:0.25;
 }
 
-[class^="userPopout-"] [class^="divider"] /* divider in user popout*/
+[class^="userPopout-"] [class^="divider"] /* divider in user popout */
 {
     display:none;
-}
-
-[class*="profileBanner"] /*  banner in user profile */
-{
-    height:75px;
 }
 
 [class^="userPopout-"] [class^="aboutMeSection"] > [class^="aboutMe"] /* about me section header and body */
@@ -696,7 +711,7 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 
 [aria-controls="Profile Customization-tab" i]::before /* User profile */
 {
-    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/account.png');
+    background-image: url('https://imgur.com/2NiLfki.png');
 }
 
 [aria-controls="Privacy & Safety-tab" i]::before /* Privacy & Safety */
@@ -860,7 +875,51 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/logout.png');
 }
 
-[class^="pageWrapper-"] /* explore public servers page*/
+[class^="customizationSection"][class*="preview-"] [class^="avatarUploader"]:not([class*="banner" i]):not([class*="hint" i]) /* avatar in customization tab */
+{
+    top:45px;
+    left:60px;
+    border:none;
+}
+
+[class^="customizationSection"][class*="preview-"] [class^="customStatus-"] /* custom status in customization tab*/
+{
+    display:block;
+    text-align: center;
+}
+
+[class^="customizationSection"][class*="preview-"] [class^="divider-"] /* divider in customization tab*/
+{
+    display:none;
+}
+
+[class^="customizationSection"][class*="preview-"] [class^="aboutMeSection"] > * /* children of about me section in customization tab*/
+{
+    display: block;
+    text-align: center;
+    margin-left: 5px;
+}
+
+[class^="customizationSection"][class*="preview-"] [class^="fakeActivityTitle-"] /* activity title in customization tab*/
+{
+    justify-content: center;
+    text-align: center;
+}
+
+[class^="customizationSection"][class*="preview-"] [class^="profileBadges"] /* badge list in customization tab*/
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width:88px;
+    right:0px;
+    top:0px;
+    left:205px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+[class^="content-"] [class^="pageWrapper-"] /* explore public servers page*/
 {
     background: var( --background-sides) !important;
 }
@@ -887,7 +946,9 @@ body,
 [class^="privateChannels"],
 [class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"] > *,
 [class^="nowPlayingColumn-"],
-[class^="nowPlayingColumn-"] *,
+[class^="nowPlaying"] > [class^="container-"],
+[class^="pageContent-"] > [class^="stageSection"],
+[class^="applicationStore-"] [class^="scroller-"],
 [class^="layers-"] > [class^="layer-"],
 [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > *,
 [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"]
