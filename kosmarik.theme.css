@@ -27,7 +27,7 @@
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
-    --home-icon: url('https://imgur.com/D4C5VpD.gif');
+    --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/giphy.gif');
     --background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/background.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
@@ -478,27 +478,33 @@ div[class^="uploadModal-"] div[class^="channelTextAreaUpload-"] > * /* 'Add a co
     background:transparent;
 }
 
-[class^="focusLock-"] [class*="activityHeader-"] /* custom status in user profile */
+[class^="focusLock-"] > [class^="root-"] [class*="activityHeader-"] /* custom status in user profile */
 {
     display: block;
     text-align: center;
 }
 
-[class^="focusLock-"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
+[class^="focusLock-"] > [class^="root-"] [class^="actionButton-"][class*="colorGreen-"] /* send friend request button in user profile */
 {
     border-radius: var(--bars-border-radius);
 }
 
-[class^="focusLock-"] [class^="relationshipButtons"] /* send a friend request and one other buttons in user profile */
+[class^="focusLock-"] > [class^="root-"] [class^="relationshipButtons"] /* send a friend request and one other buttons in user profile */
 {
     left:20px !important;
     position: relative;
 }
 
-[class^="focusLock-"] [class^="relationshipButtons"] [class^="additionalActionsIcon"] /* additional action button in user profile */
+[class^="focusLock-"] > [class^="root-"] [class^="relationshipButtons"] [class^="additionalActionsIcon"] /* additional action button in user profile */
 {
     position: relative;
     right:5px;
+}
+
+[class^="focusLock-"] > [class^="root-"] [class^="userInfoSection-"] > *:not([class^="connectedAccounts-"]) /* children of user info in user profile*/
+{
+    display:block;
+    text-align: center;
 }
 
 [class*="search-"] svg[class^="icon-"] > path /* search bar icon*/
