@@ -717,7 +717,7 @@
  
  [aria-controls="Profile Customization-tab" i]::before /* User profile */
  {
-     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/customization.png');
+     background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/profile.png');
  }
  
  [aria-controls="Privacy & Safety-tab" i]::before /* Privacy & Safety */
