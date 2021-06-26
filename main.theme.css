@@ -654,6 +654,11 @@
      border-color:transparent;
  }
  
+ .theme-light [class^="root-"] [class^="flex-"] > button[class*="lookBlank-"] /* back button in join a server popout*/
+{
+    color:white
+}
+
  [class^="bar-"] > [class^="barFill-"] /* fill of bars*/ 
  {
      background: var(--main);
@@ -924,7 +929,7 @@
      flex-shrink: 0;
      flex-grow: 0;
  }
- 
+
  [class^="content-"] [class^="pageWrapper-"] /* explore public servers page*/
  {
      background: var( --background-sides) !important;
@@ -957,7 +962,8 @@
  [class^="applicationStore-"] [class^="scroller-"],
  [class^="layers-"] > [class^="layer-"],
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > *,
- [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"]
+ [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"],
+ [class^="layers-"] div > [class^="standardSidebarView-"] [class^="contentColumn-"] [class^="page"] > [class^="sidebar-"] [class^="titleContainer"]
  {
      background: transparent !important;
  }
