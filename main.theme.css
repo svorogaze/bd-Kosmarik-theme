@@ -672,7 +672,7 @@
  [class^="layer"] > [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
  {
      position: relative;
-     bottom: -6.5px !important;
+     top: 6.5px !important;
      content: '';
      height: 24px;
      width: 24px;
