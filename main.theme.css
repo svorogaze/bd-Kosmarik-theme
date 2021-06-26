@@ -346,7 +346,7 @@
  
  [class^="membersWrap-"][class*="hiddenMembers-"] [class*="membersGroup-"] > span, /* roles in members tab*/
  [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"], /* categories */
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class^="header"], /* headers in settings */
  [class="bd-sidebar-header"] > [class^="header"] /* bd header in settings*/
  {
      color: var(--main);
@@ -359,8 +359,8 @@
  [class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
  [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
  [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories */
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before, /* headers in settings */
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* headers in settings */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"] > [class^="header"]::before, /* headers in settings */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"] > [class^="header"]::after /* headers in settings */
  {
      content:"";
      display: flex;
@@ -372,7 +372,7 @@
  
  [class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::before, /* ::before role in members tab*/
  [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::before, /* ::before categories */
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class^="header"]::before /* headers in settings */
  {
      background: linear-gradient(to left, var(--main) 25%, transparent);
      margin-right: 5px;
@@ -380,7 +380,7 @@
  
  [class^="membersWrap-"][class*="hiddenMembers-"] [class^="membersGroup-"] > span::after, /* :after role in members tab*/
  [class*="clickable-"] > [class^="mainContent-"] [class^="overflow-"]::after, /* ::after categories*/
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class^="header"]::after /* ::after headers in settings */
  {
      background-image: linear-gradient(to right, var(--main) 25%, transparent);
      margin-left: 5px;
@@ -669,7 +669,7 @@
      display: none;
  }
  
- [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
+ [class^="layer"] > [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class*="item"]:not([class*="header"])::before /* ::before tab names in settings tab */
  {
      position: relative;
      bottom: -6.5px !important;
@@ -684,7 +684,7 @@
      display: inline-block;
  }
  
- [class^="layer"] [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
+ [class^="layer"] [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class*="item"]  /* tab names in settings tab */
  {
      color:var(--main);
  }
@@ -698,7 +698,7 @@
      padding-bottom:10px
  }
  
- [class^="layer"] > [class^="standardSidebarView-"] [class^="side-"][role="tabbar"] > [class*="item"] > [class^="flex-"]  /*nitro tab name in settings tab */
+ [class^="layer"] > [class^="standardSidebarView-"] nav > [class^="side-"][role="tabbar"] > [class*="item"] > [class^="flex-"]  /*nitro tab name in settings tab */
  {
      color: var(--main);
      display: inline-block;
@@ -963,7 +963,8 @@
  [class^="layers-"] > [class^="layer-"],
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > *,
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"],
- [class^="layers-"] div > [class^="standardSidebarView-"] [class^="contentColumn-"] [class^="page"] > [class^="sidebar-"] [class^="titleContainer"]
+ [class^="layers-"] div > [class^="standardSidebarView-"] [class^="contentColumn-"] [class^="page"] > [class^="sidebar-"] [class^="titleContainer"],
+ [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] [class^="contentTransitionWrap-"] > [class^="contentRegionScroller-"] > [class^="contentColumn-"] aside > [class^="scroller-"]
  {
      background: transparent !important;
  }
