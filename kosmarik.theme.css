@@ -27,7 +27,7 @@
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
     --code-border: var(--main);
-    --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/giphy.gif');
+    --home-icon: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/home-icon.gif');
     --background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/background.jpg');
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
@@ -717,7 +717,7 @@ div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* 
 
 [aria-controls="Profile Customization-tab" i]::before /* User profile */
 {
-    background-image: url('https://imgur.com/2NiLfki.png');
+    background-image: url('https://svorogaze.github.io/bd-Kosmarik-theme/images-icons/customization.png');
 }
 
 [aria-controls="Privacy & Safety-tab" i]::before /* Privacy & Safety */
