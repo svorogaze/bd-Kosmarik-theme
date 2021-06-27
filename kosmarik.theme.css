@@ -35,4 +35,5 @@
     --reaction:rgb(61, 61, 66);
     --reacted-reaction:rgb(42, 43, 47);
     --background-folders:rgb(47, 47, 53);
+    --background-message-hover:var(--hover-message-background);
 }
