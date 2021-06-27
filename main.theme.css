@@ -308,7 +308,7 @@
  
  [class*="scrollbar-"][class*="hljs"], /* small code block */
  [class^="messageAttachment-"] > [class^="embedWrapper-"] > [class^="textContainer-"], /* code block on expanded attached file*/
- [class*="grid"], /* all embeds*/
+ [class*="grid"]:not([class*="flex-"]), /* all embeds*/
  code.inline /* quotes and other markups */
  {
      background: var(--code-background) !important;
@@ -634,8 +634,15 @@
  [class^="sourceScroller-"] > [class^="flex-"] /* source scroller in screen share popout*/
  {
      background: transparent !important;
+     flex-wrap: wrap;
+     width:400px;
  }
  
+ [class^="sourceScroller-"] > [class^="flex-"] /* parent of applications screens in screen share popout*/
+ {
+    width:100%;
+ }
+
  [class*="root-"] > form > [class*="flex"] /* child of root*/
  {
      background: transparent !important;
@@ -653,9 +660,11 @@
     color:white
 }
 
- [class^="bar-"] > [class^="barFill-"] /* fill of bars*/ 
+ [class^="bar-" i] > [class^="barFill-"], /* fill of bars*/ 
+ [class*="mediaBarProgress-"], /* fill of bars in stream of stream volume*/
+ [class*="mediaBarProgress-"]::before /* fill of bars in stream of stream volume*/
  {
-     background: var(--main);
+     background: var(--main) !important;
  }
  
  div[class^="premiumTabItem-"] > div > svg[class^="icon-"][fill^="url(#uid_"] /* nitro icon after subscriptions tab in settings*/
