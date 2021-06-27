@@ -32,16 +32,15 @@
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
-    --hover-button-border: 1.5px solid var(--main);
     --reaction:rgb(61, 61, 66);
     --reacted-reaction:rgb(42, 43, 47);
     --background-folders:rgb(47, 47, 53);
+    --hover-message-background:rgba(25, 25, 25, 0.4);
  }
  
  .theme-dark,
  .theme-light
  {
-    /*discord vars */
     --background-floating: var(--background-color-2);
     --background-secondary: var(--background-color-1);
     --background-tertiary: var(--background-color-1);
@@ -56,6 +55,7 @@
     --brand-experiment: var(--discord-experiment) !important;
     --background-mentioned:var(--mention-background);
     --background-mentioned-hover:var(--mention-background);
+    --background-message-hover:var(--hover-message-background);
     --scrollbar-thin-thumb: var(--main);
     --scrollbar-thin-track: transparent;
     --text-muted: #93989e;
@@ -615,23 +615,10 @@
      font-size: 0px;
  }
  
- [class^="actionButtons-"] > button:hover /* video and screen buttons on hover */
- {
-     border:var(--hover-button-border);
-     padding-left: 14.5px;
-     padding-right: 14.5px;
- }
- 
  section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button:hover, /* mute, deafen, settings buttons on hover*/
  section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button:hover /* krisp and leave buttons */
  {
      background:var(--background-secondary) !important;
- }
- 
- section[class^="panels-"] > [class^="container-"] > [class^="flex-"] > button:hover, /* mute, deafen, settings buttons on hover*/
- section[class^="panels-"] > [class^="wrapper-"] > * > div[class^="flex-"]:first-child >  div[class^="flex-"]:last-child > button:hover /* krisp and leave buttons */
- {
-     border: var(--hover-button-border);
  }
  
  [class^="actionButtons-"] [class^="buttonIcon"] /* icons of video and screen buttons */
@@ -1061,12 +1048,6 @@
  [name="LockClosed"] /* lock after hidden channel name in ShowHiddenChannels plugin*/
  {
      color:var(--main);
- }
- 
- #fdButton:hover /* fake deafen button in fake deafen plugin*/
- {
-     padding-left: 14.5px;
-     padding-right: 14.5px;
  }
  
  [class^="GoogleTranslateOption-modal"] /* Google Translate popout in Google Translate Option plugin*/
