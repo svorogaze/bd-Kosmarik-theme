@@ -12,36 +12,36 @@
  
   :root
  {
-     --background-color-1:rgb(40, 41, 45);
-     --background-color-2: rgb(53, 53, 59);
-     --discord-experiment:#4f545c;
-     --background-chat:rgba(40, 41, 45, 0.6);
-     --background-sides:rgba(40, 41, 45, 0.8);
-     --button-background-hover:rgb(78, 78, 87);
-     --selected-channel-color:rgb(37, 130, 173);
-     --mention-color: rgb(30, 130, 197);
-     --mention-background:rgba(12, 181, 187, 0.157);
-     --code-background:var(--background-sides);
-     --main:  #34dbd3;
-     --close-window-button-color:#ff605c;
-     --max-window-button-color:#00ca4e;
-     --hide-window-button-color:#ffbd44;
-     --code-border: var(--main);
-     --home-icon: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/home-icon.gif');
-     --background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/background.jpg');
-     --popouts-border-radius: 40px;
-     --bars-border-radius: 20px;
-     --window-buttons-border-radius: 8px;
-     --hover-button-border: 1.5px solid var(--main);
-     --reaction:rgb(61, 61, 66);
-     --reacted-reaction:rgb(42, 43, 47);
-     --background-folders:rgb(47, 47, 53);
+    --background-color-1:rgb(40, 41, 45);
+    --background-color-2: rgb(53, 53, 59);
+    --discord-experiment:#4f545c;
+    --background-chat:rgba(40, 41, 45, 0.6);
+    --background-sides:rgba(40, 41, 45, 0.8);
+    --button-background-hover:rgb(78, 78, 87);
+    --selected-channel-color:rgb(37, 130, 173);
+    --mention-color: rgb(30, 130, 197);
+    --mention-background:rgba(12, 181, 187, 0.157);
+    --code-background:var(--background-sides);
+    --main:  #34dbd3;
+    --close-window-button-color:#ff605c;
+    --max-window-button-color:#00ca4e;
+    --hide-window-button-color:#ffbd44;
+    --code-border: var(--main);
+    --home-icon: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/home-icon.gif');
+    --background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/background.jpg');
+    --popouts-border-radius: 40px;
+    --bars-border-radius: 20px;
+    --window-buttons-border-radius: 8px;
+    --hover-button-border: 1.5px solid var(--main);
+    --reaction:rgb(61, 61, 66);
+    --reacted-reaction:rgb(42, 43, 47);
+    --background-folders:rgb(47, 47, 53);
  }
  
  .theme-dark,
  .theme-light
  {
-     /*discord vars */
+    /*discord vars */
     --background-floating: var(--background-color-2);
     --background-secondary: var(--background-color-1);
     --background-tertiary: var(--background-color-1);
@@ -56,16 +56,16 @@
     --brand-experiment: var(--discord-experiment) !important;
     --background-mentioned:var(--mention-background);
     --background-mentioned-hover:var(--mention-background);
-     --scrollbar-thin-thumb: var(--main);
-     --scrollbar-thin-track: transparent;
-     --text-muted: var(--main); 
-     --scrollbar-auto-scrollbar-color-thumb: var(--main);
-     --scrollbar-auto-scrollbar-color-track:transparent;
-     --deprecated-text-input-bg: var(--background-color-1);
-     --deprecated-text-input-border:none;
-     --deprecated-text-input-border-hover: 0px solid transparent;
-     --font-display:var(--font-primary) !important;
-     --deprecated-store-bg:var(--background-sides);
+    --scrollbar-thin-thumb: var(--main);
+    --scrollbar-thin-track: transparent;
+    --text-muted: #93989e;
+    --scrollbar-auto-scrollbar-color-thumb: var(--main);
+    --scrollbar-auto-scrollbar-color-track:transparent;
+    --deprecated-text-input-bg: var(--background-color-1);
+    --deprecated-text-input-border:none;
+    --deprecated-text-input-border-hover: 0px solid transparent;
+    --font-display:var(--font-primary) !important;
+    --deprecated-store-bg:var(--background-sides);
  }
  
  .theme-light
@@ -120,6 +120,12 @@
      background: var( --selected-channel-color);
  }
  
+ [class^="iconVisibility"]:not([class*="muted" i]) [class^="mainContent-"] svg[class^="icon-"], /* icon near channel if channel isn't muted */
+ [class^="chat-"] [class^="title"] > [class^="children-"] svg[class^="icon-"] /* icon in channel header */
+ {
+    color:var(--main)
+ }
+
  [class^="iconVisibility-"][class*="modeUnread-"] > [class^="unread-"], /* unread mark around channel */
  [class^="listItem-"] > [class^="pill-"][class*="wrapper"] > [class^="item-"] /* unread mark around ds server , also selected server mark*/
  {
@@ -140,6 +146,11 @@
      top: 90px;
  }
  
+ [class^="userPopout-"]:not([style*="--user-background"]) [class^="avatarWrapper"]:not([class*="premium-" i]) /* avatar in user popout if user doesn't have nitro banner or usrbg*/
+ {
+    top: 30px;
+ }
+
  [class^="userPopout-"]:not([style*="--user-background"]) [class*="popoutBanner-"]:not([class*="premium" i]), /*  banner in user popout if user doesn't have usrbg or nitro banner */
  [class^="focusLock-"] > [class^="root-"]:not([style*="--user-background"]) [class*="profileBanner-"]:not([class*="premium" i]) /* banner in user profile if user doesn't have usrbg or nitro banner */
  {
@@ -330,6 +341,7 @@
      font-family: 'Fugaz One';
      font-size: 14.5px;
      content: "Kosmarik" !important;
+     color:var(--main);
  }
  
  [class^="membersWrap-"][class*="hiddenMembers-"] [class^="activityText"] > strong /* Activity name in members tab*/
@@ -384,11 +396,6 @@
  {
      background-image: linear-gradient(to right, var(--main) 25%, transparent);
      margin-left: 5px;
- }
- 
- [class^="colorMuted-"][class*="mentionButton-"] /* reply mention:off */
- {
-     color:grey;
  }
  
  div[class^="inner-"] > div[class^="uploadModal-"] > * /* children of 'upload picture in chat' popout*/
