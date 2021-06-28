@@ -966,7 +966,9 @@
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > *,
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] > * [class*="RegionScroller-"][class*="scrollerBase-"],
  [class^="layers-"] div > [class^="standardSidebarView-"] [class^="contentColumn-"] [class^="page"] > [class^="sidebar-"] [class^="titleContainer"],
- [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] [class^="contentTransitionWrap-"] > [class^="contentRegionScroller-"] > [class^="contentColumn-"] aside > [class^="scroller-"]
+ [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] [class^="contentTransitionWrap-"] > [class^="contentRegionScroller-"] > [class^="contentColumn-"] aside > [class^="scroller-"],
+ [class^="chat-"] > [class^="wrapper"][class*="video-"][class*="noChat-"],
+ [class^="chat-"] > [class^="wrapper"][class*="video-"][class*="noChat-"] > [class^="callContainer-"] > [class^="root-"]
  {
      background: transparent !important;
  }
