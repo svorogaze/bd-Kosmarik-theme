@@ -18,7 +18,7 @@
     --background-chat:rgba(40, 41, 45, 0.6);
     --background-sides:rgba(40, 41, 45, 0.8);
     --button-background-hover:rgb(78, 78, 87);
-    --selected-channel-color:rgb(37, 130, 173);
+    --selected-channel-color:rgb(1, 91, 126);
     --mention-color: rgb(30, 130, 197);
     --mention-background:rgba(12, 181, 187, 0.157);
     --code-background:var(--background-sides);
@@ -35,7 +35,7 @@
     --reaction:rgb(61, 61, 66);
     --reacted-reaction:rgb(42, 43, 47);
     --background-folders:rgb(47, 47, 53);
-    --hover-message-background:rgba(25, 25, 25, 0.4);
+    --hover-message-background:rgba(25, 25, 25, 0.35);
  }
  
  .theme-dark,
@@ -114,9 +114,9 @@
  }
  
  [class*="containerDefault"][class*="selected"] * [class*="content-"], /* selected channel */
- div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"]  /* selected voice channel */
+ div[class^='containerDefault-'] [class^="iconVisibility-"][class*="wrapper"][class*="modeSelected-"] > div[class^="content-"],  /* selected voice channel */
+ [id^="private-channels-"][class*="selected"] > div /* selected dm tab */
  {
-     animation: 3s rainbow_shadow linear infinite;
      background: var( --selected-channel-color);
  }
  
@@ -968,7 +968,7 @@
  [class^="layers-"] div > [class^="standardSidebarView-"] [class^="contentColumn-"] [class^="page"] > [class^="sidebar-"] [class^="titleContainer"],
  [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] [class^="contentTransitionWrap-"] > [class^="contentRegionScroller-"] > [class^="contentColumn-"] aside > [class^="scroller-"],
  [class^="chat-"] > [class^="wrapper"][class*="video-"][class*="noChat-"],
- [class^="chat-"] > [class^="wrapper"][class*="video-"][class*="noChat-"] > [class^="callContainer-"] > [class^="root-"]
+ [class^="chat-"] > [class^="wrapper"] > [class^="callContainer-"] > [class^="root-"]
  {
      background: transparent !important;
  }
@@ -986,7 +986,8 @@
  [class^="searchResultsWrap-"], /* wrap of search results*/
  [class^="membersWrap-"] > [class^="members-"], /* members tab*/
  [class^="container"] > [class^="base-"] > [class^="content-"] > [class^="container"], /* online tab in dm*/
- [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"] /* settings*/
+ [class^="layers-"] > [class^="layer-"] [class^="standardSidebarView-"], /* settings*/
+ [class^="chat"] > [class^="wrapper-"][class*="minimum"]:nth-child(2) /* dm call*/
  {
      background: var(--background-sides) !important;
  }

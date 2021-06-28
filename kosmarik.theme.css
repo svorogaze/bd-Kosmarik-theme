@@ -17,11 +17,11 @@
     --background-chat:rgba(40, 41, 45, 0.6);
     --background-sides:rgba(40, 41, 45, 0.8);
     --button-background-hover:rgb(78, 78, 87);
-    --selected-channel-color:rgb(37, 130, 173);
+    --selected-channel-color:rgb(1, 91, 126);
     --mention-color: rgb(30, 130, 197);
     --mention-background:rgba(12, 181, 187, 0.157);
     --code-background:var(--background-sides);
-    --main:#34dbd3;
+    --main:  #34dbd3;
     --close-window-button-color:#ff605c;
     --max-window-button-color:#00ca4e;
     --hide-window-button-color:#ffbd44;
@@ -31,9 +31,8 @@
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
-    --hover-button-border: 1.5px solid var(--main);
     --reaction:rgb(61, 61, 66);
     --reacted-reaction:rgb(42, 43, 47);
     --background-folders:rgb(47, 47, 53);
-    --background-message-hover:var(--hover-message-background);
+    --hover-message-background:rgba(25, 25, 25, 0.35);
 }
