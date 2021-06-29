@@ -457,7 +457,7 @@
      width:230px;
      flex-wrap: wrap;
      position: relative;
-     right: 14px;
+     right: 140px;
      justify-content: flex-end;
      top:2px;
  }
@@ -486,7 +486,7 @@
  
  [class^="focusLock-"] > [class^="root-"] [class^="avatar-"] /* avatar in user profile*/
  {
-     left:240px;
+     left:245px;
      border:none;
      top:-52px;
      background:transparent;
