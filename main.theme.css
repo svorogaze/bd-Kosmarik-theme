@@ -230,6 +230,11 @@
      text-align: center;
  }
  
+ [class^="userPopout-"] > [class^="body"] > [class^="customStatus"] /* custom stauts in user popout*/
+ {
+     width:290px !important;
+ }
+
  form[class^="form-"] [class*="scrollableContainer-"][class*="webkit-"] /* input in chat */
  {
      background: var(--background-sides);
@@ -452,7 +457,7 @@
      width:230px;
      flex-wrap: wrap;
      position: relative;
-     right: 145px;
+     right: 14px;
      justify-content: flex-end;
      top:2px;
  }
