@@ -230,9 +230,10 @@
      text-align: center;
  }
  
- [class^="userPopout-"] > [class^="body"] > [class^="customStatus"] /* custom stauts in user popout*/
+ [class^="userPopout-"] > [class^="body"] > [class^="customStatus"] > [class*="emoji"] /* emoji in cutom status in user popout*/
  {
-     width:290px !important;
+    float:none;
+    display:inline
  }
 
  form[class^="form-"] [class*="scrollableContainer-"][class*="webkit-"] /* input in chat */
@@ -302,7 +303,7 @@
      background-color: transparent !important; 
  }
  
- #emoji-picker-tab-panel > [class*="categoryList-"] > [class*="none"]::-webkit-scrollbar  /* guilds list in emoji picker*/
+[class^="wrapper-"] > [class*="categoryList-"] > [class*="none-"]::-webkit-scrollbar  /* guilds list in emoji picker*/
  {
      display: none !important;
  }
