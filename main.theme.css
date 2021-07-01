@@ -83,6 +83,22 @@
      --interactive-hover:#dcddde;
  }
  
+ [mask^="url(#svg-mask-avatar-"], /* foreign object in avatar*/
+ [class^="chat-"] [class^="message-"] img[class^="avatar-"], /* avatar in chat*/
+ [class*="avatarhint-" i], /* avatarhint*/
+ [class^="userPopout-"] [class^="avatar-"] foreignObject, /* avatar in user popout*/
+ [class*="guilds-"] > [class^="tree-"] foreignObject, /* guild avatar*/
+ [class*="guilds-"] > [class^="tree-"] [class^="wrapperSimple"] /* also guild avatar*/
+ {
+     mask: none !important;
+     border-radius: 20% !important;
+ }
+
+ [mask^="url(#svg-mask-status-"]:not([mask*="mobile"]) /* status dots */
+ {
+     mask:url(#svg-mask-status-online);
+ }
+
  [class^="homeIcon"] /* home icon */
  {
      display:none;
@@ -92,7 +108,7 @@
  {
      background: var(--home-icon) center/cover no-repeat;
  }
- 
+
  [class*="channelName"], /* all channels names */
  [class^="title-"][class*="container"] > [class^="children"] > [class^="title"] /* channels names in up */
  {
@@ -427,6 +443,11 @@
      color: var(--main) !important;
  }
  
+ [class^="tree-"] [class^="folder-"] /* folder in guilds list*/
+ {
+     background: transparent;
+ }
+
  [class^="expandedFolderBackground"], /* expanded folder background */
  [class^="expandedFolderIconWrapper"], /* expanded folder icon */
  [class^="folderIconWrapper-"] /* normal folder icon */
@@ -458,7 +479,7 @@
      width:230px;
      flex-wrap: wrap;
      position: relative;
-     right: 140px;
+     right: 150px;
      justify-content: flex-end;
      top:2px;
  }
@@ -487,7 +508,7 @@
  
  [class^="focusLock-"] > [class^="root-"] [class^="avatar-"] /* avatar in user profile*/
  {
-     left:245px;
+     left:240px;
      border:none;
      top:-52px;
      background:transparent;
@@ -897,6 +918,12 @@
     background-image: url('https://raw.githubusercontent.com/svorogaze/bd-Kosmarik-theme/84862db8b9fa579219d8324b0deb8362d7c74a29/images-icons/logout.png');
  }
  
+ [class^="accountProfileCard-"] [class^="avatar-"] /* avatar in my account tab*/
+ {
+     background: transparent !important;
+     border-color: transparent;
+ }
+
  [class^="customizationSection"][class*="preview-"] [class^="avatarUploader"]:not([class*="banner" i]):not([class*="hint" i]) /* avatar in customization tab */
  {
     top:45px;
