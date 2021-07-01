@@ -83,16 +83,6 @@
      --interactive-hover:#dcddde;
  }
  
- [mask^="url(#svg-mask-avatar-"], /* foreign object in avatar*/
- [class^="chat-"] [class^="message-"] img[class^="avatar-"], /* avatar in chat*/
- [class*="avatarhint-" i], /* avatarhint*/
- [class^="userPopout-"] [class^="avatar-"] foreignObject, /* avatar in user popout*/
- [class*="guilds-"] > [class^="tree-"] foreignObject, /* guild avatar*/
- [class*="guilds-"] > [class^="tree-"] [class^="wrapperSimple"] /* also guild avatar*/
- {
-     mask: none !important;
-     border-radius: 20% !important;
- }
 
  [mask^="url(#svg-mask-status-"]:not([mask*="mobile"]) /* status dots */
  {
