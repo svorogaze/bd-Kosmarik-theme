@@ -957,6 +957,21 @@
      flex-grow: 0;
  }
 
+ html.theme-light #app-mount::after  /* warning for users */
+ {
+    content: "Please,enable dark theme in discord settings for this theme to work properly.";
+    background: var(--background-color-1);
+    position: fixed;
+    z-index: 5;
+    right: 10px;
+    bottom: 10px;
+    
+    max-width: 225px;
+    padding: 15px 0 15px 30px;
+    border-left: 10px solid #F04747;
+    color: rgb(255, 255, 255);
+}
+
  [class^="content-"] [class^="pageWrapper-"] /* explore public servers page*/
  {
      background: var( --background-sides) !important;
