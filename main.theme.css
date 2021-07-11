@@ -128,7 +128,8 @@
  }
  
  [class^="iconVisibility"]:not([class*="muted" i]) [class^="mainContent-"] svg[class^="icon-"], /* icon near channel if channel isn't muted */
- [class^="chat-"] [class^="title"] > [class^="children-"] svg[class^="icon-"] /* icon in channel header */
+ [class^="chat-"] [class^="title"] > [class^="children-"] svg[class^="icon-"], /* icon in channel header */
+ [class^="voiceUserSummary-"] > [class^="container-"] > [class^="icon-"]
  {
     color:var(--main)
  }
@@ -309,7 +310,8 @@
      background-color: transparent !important; 
  }
  
-[class^="wrapper-"] > [class*="categoryList-"] > [class*="none-"]::-webkit-scrollbar  /* guilds list in emoji picker*/
+[class^="wrapper-"] > [class*="categoryList-"] > [class*="none-"]::-webkit-scrollbar,  /* guilds list in emoji picker*/
+[class*="guilds-"] [class^="scroller-"][class*="none-"]::-webkit-scrollbar 
  {
      display: none !important;
  }
@@ -498,7 +500,7 @@
  
  [class^="focusLock-"] > [class^="root-"] [class^="avatar-"] /* avatar in user profile*/
  {
-     left:240px;
+     left:245px;
      border:none;
      top:-52px;
      background:transparent;
