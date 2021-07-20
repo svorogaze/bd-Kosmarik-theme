@@ -682,8 +682,10 @@
 }
 
  [class^="bar-" i] > [class^="barFill-"], /* fill of bars*/ 
- [class*="mediaBarProgress-"], /* fill of bars in stream of stream volume*/
- [class*="mediaBarProgress-"]::before /* fill of bars in stream of stream volume*/
+ [class*="mediaBarProgress-"], /* fill of bars of media bar*/
+ [class*="mediaBarProgress-"]::before,  /* fill of bars of media bar*/
+ [class*="mediaBarProgress-"]::after, /* fill of bars of media bar*/
+ [class^="mediaBarProgress-"] > [class^="mediaBarGrabber-"] /* that dot of media bar*/
  {
      background: var(--main) !important;
  }

@@ -10,7 +10,7 @@
  */
 @import url("https://svorogaze.github.io/bd-Kosmarik-theme/main.theme.css");
 :root
-{
+ {
     --background-color-1:rgb(40, 41, 45);
     --background-color-2: rgb(53, 53, 59);
     --discord-experiment:#4f545c;
@@ -31,8 +31,8 @@
     --popouts-border-radius: 40px;
     --bars-border-radius: 20px;
     --window-buttons-border-radius: 8px;
-    --reaction:rgb(61, 61, 66);
+    --reaction:rgb(50, 50, 54);
     --reacted-reaction:rgb(42, 43, 47);
     --background-folders:rgb(47, 47, 53);
     --hover-message-background:rgba(25, 25, 25, 0.35);
-}
+ }
