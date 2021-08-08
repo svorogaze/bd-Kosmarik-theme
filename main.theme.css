@@ -148,6 +148,16 @@
      background-color: transparent;
  }
  
+ [class^="userPopout-"] [class^="avatarWrapper"] /* avatar in user popout*/
+ {
+     z-index: 0;
+ }
+
+ [class*="none-"]::-webkit-scrollbar /* scrollbar of "none" class */
+ {
+     display:none;
+ }
+
  [class^="userPopout-"] [class^="avatarWrapper"][class*="premium" i], /* avatar if user has banner in user popout*/
  [class^="userPopout-"][style*="--user-background"] [class^="avatarWrapper"]:not([class*="premium-" i]) /* avatar if user has usrbg */
  {
@@ -308,12 +318,6 @@
  ::-webkit-scrollbar-track
  {
      background-color: transparent !important; 
- }
- 
-[class^="wrapper-"] > [class*="categoryList-"] > [class*="none-"]::-webkit-scrollbar,  /* guilds list in emoji picker*/
-[class*="guilds-"] [class^="scroller-"][class*="none-"]::-webkit-scrollbar 
- {
-     display: none !important;
  }
  
  [class*="emojiItemDisabled-"] /* disabled emojis */
