@@ -1,5 +1,5 @@
 # Kosmarik theme
-Dark theme for better discord. Requires dark theme to work properly
+Dark theme for better discord. Requires dark theme to work properly. Theme isn't supported anymore
 
 Code has [Unlicense license](https://unlicense.org/)
 # Screenshots
